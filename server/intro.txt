@@ -1,0 +1,145 @@
+noorbazaar/
+└── server/
+    │
+    ├── 📁 config/
+    │   ├── db.js
+    │   ├── cloudinary.js
+    │   └── razorpay.js
+    │
+    ├── 📁 controllers/
+    │   ├── auth.controller.js
+    │   ├── user.controller.js
+    │   ├── product.controller.js
+    │   ├── category.controller.js
+    │   ├── order.controller.js
+    │   ├── cart.controller.js
+    │   ├── review.controller.js
+    │   ├── payment.controller.js
+    │   ├── coupon.controller.js
+    │   └── admin.controller.js
+    │
+    ├── 📁 models/
+    │   ├── User.model.js
+    │   ├── Product.model.js
+    │   ├── Category.model.js
+    │   ├── Order.model.js
+    │   ├── Cart.model.js
+    │   ├── Review.model.js
+    │   └── Coupon.model.js
+    │
+    ├── 📁 routes/
+    │   ├── auth.routes.js
+    │   ├── user.routes.js
+    │   ├── product.routes.js
+    │   ├── category.routes.js
+    │   ├── order.routes.js
+    │   ├── cart.routes.js
+    │   ├── review.routes.js
+    │   ├── payment.routes.js
+    │   ├── coupon.routes.js
+    │   └── admin.routes.js
+    │
+    ├── 📁 middleware/
+    │   ├── auth.middleware.js
+    │   ├── admin.middleware.js
+    │   ├── error.middleware.js
+    │   ├── upload.middleware.js
+    │   └── rateLimiter.middleware.js
+    │
+    ├── 📁 utils/
+    │   ├── errorHandler.js
+    │   ├── logger.js
+    │   ├── generateToken.js
+    │   ├── sendEmail.js
+    │   ├── uploadToCloudinary.js
+    │   └── apiFeatures.js
+    │
+    ├── 📁 validators/
+    │   ├── auth.validator.js
+    │   ├── product.validator.js
+    │   └── order.validator.js
+    │
+    ├── 📁 seeds/
+    │   ├── category.seed.js
+    │   ├── product.seed.js
+    │   └── admin.seed.js
+    │
+    ├── 📁 logs/
+    │   └── app.log
+    │
+    ├── app.js
+    ├── server.js
+    ├── .env
+    ├── .env.example
+    ├── .gitignore
+    └── package.json
+
+
+    -----------
+
+    client/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── common/
+│   │   ├── home/
+│   │   ├── product/
+│   │   ├── cart/
+│   │   ├── checkout/
+│   │   ├── auth/
+│   │   └── dashboard/
+│   ├── pages/
+│   ├── redux/
+│   │   ├── store.js
+│   │   └── slices/
+│   ├── services/
+│   ├── hooks/
+│   ├── utils/
+│   ├── styles/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── routes.jsx
+├── .env
+├── package.json
+├── vite.config.js
+└── tailwind.config.js
+
+--
+npm run dev
+```
+
+---
+
+## ✅ Your Structure Should Look Like
+```
+client/src/
+├── components/
+│   ├── auth/
+│   │   └── ProtectedRoute.jsx
+│   └── common/
+│       ├── Navbar.jsx
+│       └── Footer.jsx
+├── pages/
+│   ├── HomePage.jsx
+│   ├── ProductListingPage.jsx
+│   ├── ProductDetailPage.jsx
+│   ├── CartPage.jsx
+│   ├── CheckoutPage.jsx
+│   ├── LoginPage.jsx
+│   ├── RegisterPage.jsx
+│   ├── DashboardPage.jsx
+│   └── NotFoundPage.jsx
+├── redux/
+│   ├── store.js
+│   └── slices/
+│       ├── authSlice.js
+│       ├── productSlice.js
+│       ├── cartSlice.js
+│       ├── orderSlice.js
+│       └── wishlistSlice.js
+├── services/
+│   └── api.js
+├── App.jsx
+├── main.jsx
+└── index.css
+--

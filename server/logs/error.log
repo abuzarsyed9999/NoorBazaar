@@ -1,0 +1,169 @@
+2026-03-14 23:33:12 [error]: Register error: next is not a function
+2026-03-14 23:33:12 [error]: 500 - next is not a function - /api/v1/auth/register - POST - ::1
+2026-03-14 23:36:21 [error]: Register error: next is not a function
+2026-03-14 23:36:21 [error]: 500 - next is not a function - /api/v1/auth/register - POST - ::1
+2026-03-14 23:36:26 [error]: Register error: next is not a function
+2026-03-14 23:36:26 [error]: 500 - next is not a function - /api/v1/auth/register - POST - ::1
+2026-03-14 23:36:45 [error]: Register error: next is not a function
+2026-03-14 23:36:45 [error]: 500 - next is not a function - /api/v1/auth/register - POST - ::1
+2026-03-14 23:38:50 [error]: Register error: next is not a function
+2026-03-14 23:38:50 [error]: 500 - next is not a function - /api/v1/auth/register - POST - ::1
+2026-03-14 23:39:05 [error]: Register error: next is not a function
+2026-03-14 23:39:05 [error]: 500 - next is not a function - /api/v1/auth/register - POST - ::1
+2026-03-14 23:40:18 [error]: Register error: next is not a function
+2026-03-14 23:40:18 [error]: 500 - next is not a function - /api/v1/auth/register - POST - ::1
+2026-03-14 23:43:59 [error]: 500 - next is not a function - /api/v1/auth/register - POST - ::1
+2026-03-14 23:47:37 [error]: 400 - Email already registered. Please login. - /api/v1/auth/register - POST - ::1
+2026-03-14 23:48:44 [error]: 500 - Schema hasn't been registered for model "Product".
+Use mongoose.model(name, schema) - /api/v1/auth/me - GET - ::1
+2026-03-14 23:51:01 [error]: 400 - Unexpected end of JSON input - /api/v1/auth/logout - POST - ::1
+2026-03-14 23:55:25 [error]: 400 - Unexpected end of JSON input - /api/v1/auth/logout - POST - ::1
+2026-03-15 00:04:17 [error]: 401 - Access denied. Please login to continue. - /api/v1/categories - POST - ::1
+2026-03-15 00:05:41 [error]: 401 - Access denied. Please login to continue. - /api/v1/products - POST - ::1
+2026-03-15 00:05:59 [error]: 401 - Access denied. Please login to continue. - /api/v1/categories - POST - ::1
+2026-03-15 00:06:04 [error]: 401 - Access denied. Please login to continue. - /api/v1/categories - POST - ::1
+2026-03-15 00:06:09 [error]: 401 - Access denied. Please login to continue. - /api/v1/categories - POST - ::1
+2026-03-15 00:06:24 [error]: 401 - Access denied. Please login to continue. - /api/v1/categories - POST - ::1
+2026-03-15 14:36:07 [error]: 400 - Product name is required - /api/v1/products - POST - ::1
+2026-03-15 14:41:01 [error]: 400 - Product name is required - /api/v1/products - POST - ::1
+2026-03-15 14:41:18 [error]: 400 - Product name is required - /api/v1/products - POST - ::1
+2026-03-15 14:42:45 [error]: 400 - Product name is required - /api/v1/products - POST - ::1
+2026-03-15 14:43:28 [error]: 400 - Product name is required - /api/v1/products - POST - ::1
+2026-03-15 14:44:05 [error]: 400 - Product name is required - /api/v1/products - POST - ::1
+2026-03-15 14:45:41 [error]: Cloudinary upload error: Cannot read properties of undefined (reading 'upload_stream')
+2026-03-15 14:45:41 [error]: Multiple upload error: Image upload failed
+2026-03-15 14:45:41 [error]: 500 - Images upload failed - /api/v1/products - POST - ::1
+2026-03-15 14:45:54 [error]: 400 - Please upload at least one product image - /api/v1/products - POST - ::1
+2026-03-15 14:46:07 [error]: Cloudinary upload error: Cannot read properties of undefined (reading 'upload_stream')
+2026-03-15 14:46:07 [error]: Multiple upload error: Image upload failed
+2026-03-15 14:46:07 [error]: 500 - Images upload failed - /api/v1/products - POST - ::1
+2026-03-15 14:52:00 [error]: Cloudinary upload error: Unknown API key your_api_key
+2026-03-15 14:52:00 [error]: Multiple upload error: Image upload failed
+2026-03-15 14:52:00 [error]: 500 - Images upload failed - /api/v1/products - POST - ::1
+2026-03-15 14:52:09 [error]: Cloudinary upload error: Unknown API key your_api_key
+2026-03-15 14:52:09 [error]: Multiple upload error: Image upload failed
+2026-03-15 14:52:09 [error]: 500 - Images upload failed - /api/v1/products - POST - ::1
+2026-03-15 15:09:06 [error]: 400 - Only images allowed (jpeg, jpg, png, webp) - /api/v1/products - POST - ::1
+2026-03-15 15:32:34 [error]: ❌ Email failed: self-signed certificate in certificate chain
+2026-03-15 15:35:39 [error]: 400 - Your cart is empty. Add items before placing order. - /api/v1/orders - POST - ::1
+2026-03-15 15:36:40 [error]: 500 - Cast to ObjectId failed for value "69b67f7a510a6233bba9c63" (type string) at path "_id" for model "Product" - /api/v1/cart/add - POST - ::1
+2026-03-15 15:40:14 [error]: ❌ Email failed: self-signed certificate in certificate chain
+2026-03-15 16:30:07 [error]: 500 - Cannot read properties of undefined (reading 'name') - /api/v1/users/profile - PUT - ::1
+2026-03-15 18:24:23 [error]: ❌ Email failed: self-signed certificate in certificate chain
+2026-03-15 19:02:38 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-15 19:02:40 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-15 19:02:41 [error]: 500 - Cast to ObjectId failed for value "attar-and-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-and-fragrances - GET - ::1
+2026-03-15 19:02:42 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-15 19:28:25 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-15 19:28:26 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-15 19:33:34 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-15 19:33:35 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-15 19:33:36 [error]: 500 - Cast to ObjectId failed for value "prayer-items" (type string) at path "category" for model "Product" - /api/v1/products?category=prayer-items - GET - ::1
+2026-03-15 19:33:37 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-15 19:58:37 [error]: Auth middleware error: getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 19:58:37 [error]: 401 - Authentication failed. - /api/v1/cart - GET - ::1
+2026-03-15 19:58:37 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net - /api/v1/products/featured - GET - ::1
+2026-03-15 19:58:37 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net - /api/v1/categories - GET - ::1
+2026-03-15 19:58:37 [error]: Auth middleware error: getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 19:58:37 [error]: 401 - Authentication failed. - /api/v1/auth/me - GET - ::1
+2026-03-15 20:14:58 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-15 20:14:58 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-15 20:14:59 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-15 20:15:01 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-15 20:15:01 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-15 20:15:02 [error]: 500 - Cast to ObjectId failed for value "prayer-items" (type string) at path "category" for model "Product" - /api/v1/products?category=prayer-items - GET - ::1
+2026-03-15 20:15:02 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-15 20:15:03 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-15 20:15:05 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-15 20:15:06 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-15 20:34:40 [error]: 500 - Cast to ObjectId failed for value "attar-and-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-and-fragrances - GET - ::1
+2026-03-15 20:34:41 [error]: 500 - Cast to ObjectId failed for value "attar-and-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-and-fragrances - GET - ::1
+2026-03-15 22:21:01 [error]: Auth middleware error: getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 22:21:01 [error]: 401 - Authentication failed. - /api/v1/auth/me - GET - ::1
+2026-03-15 22:21:01 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net - /api/v1/categories - GET - ::1
+2026-03-15 22:21:02 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net - /api/v1/products/featured - GET - ::1
+2026-03-15 22:21:02 [error]: Auth middleware error: getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 22:21:02 [error]: 401 - Authentication failed. - /api/v1/cart - GET - ::1
+2026-03-15 22:21:03 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net - /api/v1/categories - GET - ::1
+2026-03-15 22:21:03 [error]: Auth middleware error: getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 22:21:03 [error]: 401 - Authentication failed. - /api/v1/cart - GET - ::1
+2026-03-15 22:21:04 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net - /api/v1/products/featured - GET - ::1
+2026-03-15 22:21:04 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net - /api/v1/categories - GET - ::1
+2026-03-15 22:21:05 [error]: Auth middleware error: getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 22:21:05 [error]: 401 - Authentication failed. - /api/v1/auth/me - GET - ::1
+2026-03-15 22:21:40 [error]: 401 - Invalid email or password. - /api/v1/auth/login - POST - ::1
+2026-03-15 22:26:09 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-15 22:26:10 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-15 22:26:10 [error]: 500 - Cast to ObjectId failed for value "prayer-items" (type string) at path "category" for model "Product" - /api/v1/products?category=prayer-items - GET - ::1
+2026-03-15 22:26:11 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-15 22:26:12 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-15 22:37:11 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-15 22:37:11 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-15 22:45:33 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-15 22:45:34 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-15 22:45:39 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-15 22:45:40 [error]: 500 - Cast to ObjectId failed for value "prayer-items" (type string) at path "category" for model "Product" - /api/v1/products?category=prayer-items - GET - ::1
+2026-03-15 22:45:41 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-15 22:45:42 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-16 10:24:17 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 10:24:17 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 10:24:26 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 10:24:27 [error]: 500 - Cast to ObjectId failed for value "prayer-items" (type string) at path "category" for model "Product" - /api/v1/products?category=prayer-items - GET - ::1
+2026-03-16 10:24:30 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-16 10:24:30 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-16 10:24:31 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-16 10:48:29 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-16 10:48:29 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-16 10:48:40 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-16 11:04:53 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 11:04:53 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 11:04:56 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 11:04:57 [error]: 500 - Cast to ObjectId failed for value "prayer-items" (type string) at path "category" for model "Product" - /api/v1/products?category=prayer-items - GET - ::1
+2026-03-16 11:04:58 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-16 11:05:00 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-16 11:05:00 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-16 11:05:01 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 11:05:07 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 11:05:08 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 11:05:10 [error]: 500 - Cast to ObjectId failed for value "prayer-items" (type string) at path "category" for model "Product" - /api/v1/products?category=prayer-items - GET - ::1
+2026-03-16 11:05:11 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-16 11:05:12 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-16 11:05:12 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-16 11:05:13 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 11:05:17 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 11:05:17 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 11:05:20 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-16 11:05:22 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-16 11:05:23 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-16 11:20:46 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 11:20:46 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 14:09:21 [error]: 400 - Product already in wishlist - /api/v1/users/wishlist/69b67f7a510a6233bba9c636 - POST - ::1
+2026-03-16 14:09:30 [error]: 400 - Product already in wishlist - /api/v1/users/wishlist/69b67f7a510a6233bba9c636 - POST - ::1
+2026-03-16 14:11:12 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 14:11:12 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 14:11:15 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 14:11:17 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 14:11:18 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 14:11:19 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-16 14:11:20 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-16 14:11:21 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-16 14:11:24 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets&sort=price - GET - ::1
+2026-03-16 14:11:31 [error]: 500 - Cast to ObjectId failed for value "prayer-items" (type string) at path "category" for model "Product" - /api/v1/products?category=prayer-items - GET - ::1
+2026-03-16 14:12:54 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 14:17:40 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 14:17:41 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 14:17:42 [error]: 500 - Cast to ObjectId failed for value "prayer-items" (type string) at path "category" for model "Product" - /api/v1/products?category=prayer-items - GET - ::1
+2026-03-16 14:21:32 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 14:21:32 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 14:21:33 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 14:21:35 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 14:21:36 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 16:37:36 [error]: Auth middleware error: getaddrinfo ENOTFOUND ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-16 16:37:36 [error]: 401 - Authentication failed. - /api/v1/cart - GET - ::1
+2026-03-16 16:37:37 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-00.yaeay1t.mongodb.net - /api/v1/products - GET - ::1
+2026-03-16 16:37:37 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-00.yaeay1t.mongodb.net - /api/v1/categories - GET - ::1
+2026-03-16 16:37:38 [error]: Auth middleware error: getaddrinfo ENOTFOUND ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-16 16:37:38 [error]: 401 - Authentication failed. - /api/v1/auth/me - GET - ::1
+2026-03-16 16:37:46 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-00.yaeay1t.mongodb.net - /api/v1/products/featured - GET - ::1
+2026-03-16 16:37:58 [error]: Auth middleware error: getaddrinfo ENOTFOUND ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-16 16:37:58 [error]: 401 - Authentication failed. - /api/v1/cart - GET - ::1

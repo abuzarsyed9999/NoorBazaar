@@ -1,0 +1,560 @@
+2026-03-13 23:52:31 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-13 23:52:31 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-13 23:52:31 [info]: 🔗 http://localhost:5000
+2026-03-13 23:52:33 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-13 23:52:33 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-13 23:52:33 [info]: 🔗 http://localhost:5000
+2026-03-13 23:52:39 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-13 23:52:39 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-13 23:52:39 [info]: 🔗 http://localhost:5000
+2026-03-13 23:54:10 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-13 23:54:10 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-13 23:54:10 [info]: 🔗 http://localhost:5000
+2026-03-13 23:55:09 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-13 23:55:09 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-13 23:55:09 [info]: 🔗 http://localhost:5000
+2026-03-13 23:55:21 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-13 23:55:21 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-13 23:55:21 [info]: 🔗 http://localhost:5000
+2026-03-13 23:55:29 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-13 23:55:29 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-13 23:55:29 [info]: 🔗 http://localhost:5000
+2026-03-13 23:55:40 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-13 23:55:40 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-13 23:55:40 [info]: 🔗 http://localhost:5000
+2026-03-13 23:55:48 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-13 23:55:48 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-13 23:55:48 [info]: 🔗 http://localhost:5000
+2026-03-13 23:55:56 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-13 23:55:56 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-13 23:55:56 [info]: 🔗 http://localhost:5000
+2026-03-13 23:56:06 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-13 23:56:06 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-13 23:56:06 [info]: 🔗 http://localhost:5000
+2026-03-13 23:56:27 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-13 23:56:27 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-13 23:56:27 [info]: 🔗 http://localhost:5000
+2026-03-13 23:56:30 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-13 23:56:30 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-13 23:56:30 [info]: 🔗 http://localhost:5000
+2026-03-14 23:32:39 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-14 23:32:39 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:32:39 [info]: 🔗 http://localhost:5000
+2026-03-14 23:33:12 [error]: Register error: next is not a function
+2026-03-14 23:33:12 [error]: 500 - next is not a function - /api/v1/auth/register - POST - ::1
+2026-03-14 23:36:19 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-14 23:36:19 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:36:19 [info]: 🔗 http://localhost:5000
+2026-03-14 23:36:21 [error]: Register error: next is not a function
+2026-03-14 23:36:21 [error]: 500 - next is not a function - /api/v1/auth/register - POST - ::1
+2026-03-14 23:36:26 [error]: Register error: next is not a function
+2026-03-14 23:36:26 [error]: 500 - next is not a function - /api/v1/auth/register - POST - ::1
+2026-03-14 23:36:40 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-14 23:36:40 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:36:40 [info]: 🔗 http://localhost:5000
+2026-03-14 23:36:45 [error]: Register error: next is not a function
+2026-03-14 23:36:45 [error]: 500 - next is not a function - /api/v1/auth/register - POST - ::1
+2026-03-14 23:38:45 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-14 23:38:45 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:38:45 [info]: 🔗 http://localhost:5000
+2026-03-14 23:38:50 [error]: Register error: next is not a function
+2026-03-14 23:38:50 [error]: 500 - next is not a function - /api/v1/auth/register - POST - ::1
+2026-03-14 23:39:00 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-14 23:39:00 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:39:00 [info]: 🔗 http://localhost:5000
+2026-03-14 23:39:05 [error]: Register error: next is not a function
+2026-03-14 23:39:05 [error]: 500 - next is not a function - /api/v1/auth/register - POST - ::1
+2026-03-14 23:40:14 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-14 23:40:14 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:40:14 [info]: 🔗 http://localhost:5000
+2026-03-14 23:40:18 [error]: Register error: next is not a function
+2026-03-14 23:40:18 [error]: 500 - next is not a function - /api/v1/auth/register - POST - ::1
+2026-03-14 23:41:36 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-14 23:41:36 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:41:36 [info]: 🔗 http://localhost:5000
+2026-03-14 23:41:52 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-14 23:41:52 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:41:52 [info]: 🔗 http://localhost:5000
+2026-03-14 23:43:33 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-14 23:43:33 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:43:33 [info]: 🔗 http://localhost:5000
+2026-03-14 23:43:42 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-14 23:43:42 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:43:42 [info]: 🔗 http://localhost:5000
+2026-03-14 23:43:54 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-14 23:43:54 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:43:54 [info]: 🔗 http://localhost:5000
+2026-03-14 23:43:59 [error]: 500 - next is not a function - /api/v1/auth/register - POST - ::1
+2026-03-14 23:45:41 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-14 23:45:41 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:45:41 [info]: 🔗 http://localhost:5000
+2026-03-14 23:47:04 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-14 23:47:04 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:47:04 [info]: 🔗 http://localhost:5000
+2026-03-14 23:47:37 [error]: 400 - Email already registered. Please login. - /api/v1/auth/register - POST - ::1
+2026-03-14 23:48:18 [info]: ✅ User logged in: abuzar@gmail.com
+2026-03-14 23:48:44 [error]: 500 - Schema hasn't been registered for model "Product".
+Use mongoose.model(name, schema) - /api/v1/auth/me - GET - ::1
+2026-03-14 23:50:09 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-14 23:50:09 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:50:09 [info]: 🔗 http://localhost:5000
+2026-03-14 23:51:01 [error]: 400 - Unexpected end of JSON input - /api/v1/auth/logout - POST - ::1
+2026-03-14 23:54:04 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-14 23:54:04 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:54:04 [info]: 🔗 http://localhost:5000
+2026-03-14 23:54:21 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-14 23:54:21 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:54:21 [info]: 🔗 http://localhost:5000
+2026-03-14 23:54:37 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-14 23:54:37 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:54:37 [info]: 🔗 http://localhost:5000
+2026-03-14 23:54:52 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-14 23:54:52 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:54:52 [info]: 🔗 http://localhost:5000
+2026-03-14 23:55:05 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-14 23:55:05 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-14 23:55:05 [info]: 🔗 http://localhost:5000
+2026-03-14 23:55:25 [error]: 400 - Unexpected end of JSON input - /api/v1/auth/logout - POST - ::1
+2026-03-14 23:56:11 [info]: ✅ User logged out: abuzar@gmail.com
+2026-03-15 00:00:38 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 00:00:38 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 00:00:38 [info]: 🔗 http://localhost:5000
+2026-03-15 00:00:52 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 00:00:52 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 00:00:52 [info]: 🔗 http://localhost:5000
+2026-03-15 00:01:10 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 00:01:10 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 00:01:10 [info]: 🔗 http://localhost:5000
+2026-03-15 00:01:33 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-15 00:01:33 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 00:01:33 [info]: 🔗 http://localhost:5000
+2026-03-15 00:01:52 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 00:01:52 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 00:01:52 [info]: 🔗 http://localhost:5000
+2026-03-15 00:02:09 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-15 00:02:09 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 00:02:09 [info]: 🔗 http://localhost:5000
+2026-03-15 00:02:48 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-15 00:02:50 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 00:02:50 [info]: 🔗 http://localhost:5000
+2026-03-15 00:03:12 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-15 00:03:12 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 00:03:12 [info]: 🔗 http://localhost:5000
+2026-03-15 00:04:17 [error]: 401 - Access denied. Please login to continue. - /api/v1/categories - POST - ::1
+2026-03-15 00:05:41 [error]: 401 - Access denied. Please login to continue. - /api/v1/products - POST - ::1
+2026-03-15 00:05:59 [error]: 401 - Access denied. Please login to continue. - /api/v1/categories - POST - ::1
+2026-03-15 00:06:04 [error]: 401 - Access denied. Please login to continue. - /api/v1/categories - POST - ::1
+2026-03-15 00:06:09 [error]: 401 - Access denied. Please login to continue. - /api/v1/categories - POST - ::1
+2026-03-15 00:06:18 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-15 00:06:18 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 00:06:18 [info]: 🔗 http://localhost:5000
+2026-03-15 00:06:24 [error]: 401 - Access denied. Please login to continue. - /api/v1/categories - POST - ::1
+2026-03-15 00:07:22 [info]: ✅ User logged in: abuzar@gmail.com
+2026-03-15 00:13:50 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-15 00:13:50 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 00:13:50 [info]: 🔗 http://localhost:5000
+2026-03-15 00:14:01 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-15 00:14:01 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 00:14:01 [info]: 🔗 http://localhost:5000
+2026-03-15 00:14:39 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-15 00:14:39 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 00:14:39 [info]: 🔗 http://localhost:5000
+2026-03-15 00:14:52 [info]: ✅ User logged in: abuzar@gmail.com
+2026-03-15 00:19:27 [info]: ✅ Category created: Quran & Books
+2026-03-15 00:35:14 [info]: 🔄 MongoDB Reconnected
+2026-03-15 00:35:14 [info]: 🔄 MongoDB Reconnected
+2026-03-15 14:10:55 [warn]: ⚠️  MongoDB Disconnected
+2026-03-15 14:10:55 [info]: 🔄 MongoDB Reconnected
+2026-03-15 14:16:20 [info]: ✅ Category created: Tasbih
+2026-03-15 14:16:31 [info]: ✅ Category created: Prayer Items
+2026-03-15 14:16:39 [info]: ✅ Category created: Islamic Decor
+2026-03-15 14:16:49 [info]: ✅ Category created: Attar & Fragrances
+2026-03-15 14:16:57 [info]: ✅ Category created: Gift Sets
+2026-03-15 14:33:18 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 14:33:18 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 14:33:18 [info]: 🔗 http://localhost:5000
+2026-03-15 14:34:27 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-15 14:34:27 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 14:34:27 [info]: 🔗 http://localhost:5000
+2026-03-15 14:34:36 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-15 14:34:36 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 14:34:36 [info]: 🔗 http://localhost:5000
+2026-03-15 14:34:40 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 14:34:40 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 14:34:40 [info]: 🔗 http://localhost:5000
+2026-03-15 14:36:04 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 14:36:04 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 14:36:04 [info]: 🔗 http://localhost:5000
+2026-03-15 14:36:07 [error]: 400 - Product name is required - /api/v1/products - POST - ::1
+2026-03-15 14:36:48 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 14:36:48 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 14:36:48 [info]: 🔗 http://localhost:5000
+2026-03-15 14:41:01 [error]: 400 - Product name is required - /api/v1/products - POST - ::1
+2026-03-15 14:41:15 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-15 14:41:15 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 14:41:15 [info]: 🔗 http://localhost:5000
+2026-03-15 14:41:18 [error]: 400 - Product name is required - /api/v1/products - POST - ::1
+2026-03-15 14:42:32 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-15 14:42:32 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 14:42:32 [info]: 🔗 http://localhost:5000
+2026-03-15 14:42:45 [error]: 400 - Product name is required - /api/v1/products - POST - ::1
+2026-03-15 14:43:28 [error]: 400 - Product name is required - /api/v1/products - POST - ::1
+2026-03-15 14:44:05 [error]: 400 - Product name is required - /api/v1/products - POST - ::1
+2026-03-15 14:45:39 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-15 14:45:39 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 14:45:39 [info]: 🔗 http://localhost:5000
+2026-03-15 14:45:41 [error]: Cloudinary upload error: Cannot read properties of undefined (reading 'upload_stream')
+2026-03-15 14:45:41 [error]: Multiple upload error: Image upload failed
+2026-03-15 14:45:41 [error]: 500 - Images upload failed - /api/v1/products - POST - ::1
+2026-03-15 14:45:54 [error]: 400 - Please upload at least one product image - /api/v1/products - POST - ::1
+2026-03-15 14:46:07 [error]: Cloudinary upload error: Cannot read properties of undefined (reading 'upload_stream')
+2026-03-15 14:46:07 [error]: Multiple upload error: Image upload failed
+2026-03-15 14:46:07 [error]: 500 - Images upload failed - /api/v1/products - POST - ::1
+2026-03-15 14:50:05 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 14:50:05 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 14:50:05 [info]: 🔗 http://localhost:5000
+2026-03-15 14:50:24 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-15 14:50:24 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 14:50:24 [info]: 🔗 http://localhost:5000
+2026-03-15 14:50:37 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 14:50:37 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 14:50:37 [info]: 🔗 http://localhost:5000
+2026-03-15 14:50:48 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-15 14:50:48 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 14:50:48 [info]: 🔗 http://localhost:5000
+2026-03-15 14:52:00 [error]: Cloudinary upload error: Unknown API key your_api_key
+2026-03-15 14:52:00 [error]: Multiple upload error: Image upload failed
+2026-03-15 14:52:00 [error]: 500 - Images upload failed - /api/v1/products - POST - ::1
+2026-03-15 14:52:09 [error]: Cloudinary upload error: Unknown API key your_api_key
+2026-03-15 14:52:09 [error]: Multiple upload error: Image upload failed
+2026-03-15 14:52:09 [error]: 500 - Images upload failed - /api/v1/products - POST - ::1
+2026-03-15 14:52:41 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 14:52:41 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 14:52:41 [info]: 🔗 http://localhost:5000
+2026-03-15 14:53:05 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 14:53:05 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 14:53:05 [info]: 🔗 http://localhost:5000
+2026-03-15 14:53:12 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 14:53:12 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 14:53:12 [info]: 🔗 http://localhost:5000
+2026-03-15 14:53:41 [info]: ✅ Product created: Al-Quran Al-Kareem
+2026-03-15 15:05:46 [info]: ✅ Product created: Ramadan Gift Hamper
+2026-03-15 15:09:06 [error]: 400 - Only images allowed (jpeg, jpg, png, webp) - /api/v1/products - POST - ::1
+2026-03-15 15:10:55 [info]: ✅ Product created: Ayatul Kursi Frame
+2026-03-15 15:14:27 [info]: ✅ Product created: Velvet Prayer Mat
+2026-03-15 15:17:40 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-15 15:17:40 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 15:17:40 [info]: 🔗 http://localhost:5000
+2026-03-15 15:19:14 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-15 15:19:14 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 15:19:14 [info]: 🔗 http://localhost:5000
+2026-03-15 15:19:35 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-15 15:19:35 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 15:19:35 [info]: 🔗 http://localhost:5000
+2026-03-15 15:20:32 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-15 15:20:32 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 15:20:32 [info]: 🔗 http://localhost:5000
+2026-03-15 15:20:53 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-15 15:20:53 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 15:20:53 [info]: 🔗 http://localhost:5000
+2026-03-15 15:21:11 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-15 15:21:11 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 15:21:11 [info]: 🔗 http://localhost:5000
+2026-03-15 15:21:36 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-15 15:21:36 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 15:21:36 [info]: 🔗 http://localhost:5000
+2026-03-15 15:25:17 [info]: ✅ User logged in: abuzar@gmail.com
+2026-03-15 15:31:02 [info]: 🛒 Item added to cart: Velvet Prayer Mat by abuzar@gmail.com
+2026-03-15 15:32:32 [info]: ✅ Order placed: NB952153861 by abuzar@gmail.com
+2026-03-15 15:32:34 [error]: ❌ Email failed: self-signed certificate in certificate chain
+2026-03-15 15:35:39 [error]: 400 - Your cart is empty. Add items before placing order. - /api/v1/orders - POST - ::1
+2026-03-15 15:36:40 [error]: 500 - Cast to ObjectId failed for value "69b67f7a510a6233bba9c63" (type string) at path "_id" for model "Product" - /api/v1/cart/add - POST - ::1
+2026-03-15 15:38:08 [info]: 🛒 Item added to cart: Velvet Prayer Mat by abuzar@gmail.com
+2026-03-15 15:40:12 [info]: ✅ Order placed: NB412239783 by abuzar@gmail.com
+2026-03-15 15:40:14 [error]: ❌ Email failed: self-signed certificate in certificate chain
+2026-03-15 15:44:27 [info]: ✅ Order NB412239783 status updated to Confirmed
+2026-03-15 15:51:19 [info]: 🔄 MongoDB Reconnected
+2026-03-15 15:51:19 [info]: 🔄 MongoDB Reconnected
+2026-03-15 15:51:29 [warn]: ⚠️  MongoDB Disconnected
+2026-03-15 15:51:29 [info]: 🔄 MongoDB Reconnected
+2026-03-15 15:52:00 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-15 15:52:00 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 15:52:00 [info]: 🔗 http://localhost:5000
+2026-03-15 15:52:16 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-15 15:52:16 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 15:52:16 [info]: 🔗 http://localhost:5000
+2026-03-15 15:52:46 [info]: ✅ Razorpay configured
+2026-03-15 15:52:47 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 15:52:47 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 15:52:47 [info]: 🔗 http://localhost:5000
+2026-03-15 16:17:40 [info]: 🔄 MongoDB Reconnected
+2026-03-15 16:17:40 [info]: 🔄 MongoDB Reconnected
+2026-03-15 16:17:51 [warn]: ⚠️  MongoDB Disconnected
+2026-03-15 16:17:51 [info]: 🔄 MongoDB Reconnected
+2026-03-15 16:18:13 [info]: ✅ Razorpay configured
+2026-03-15 16:18:14 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-15 16:18:14 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 16:18:14 [info]: 🔗 http://localhost:5000
+2026-03-15 16:18:35 [info]: ✅ Razorpay configured
+2026-03-15 16:18:36 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-15 16:18:36 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 16:18:36 [info]: 🔗 http://localhost:5000
+2026-03-15 16:18:51 [info]: ✅ Razorpay configured
+2026-03-15 16:18:52 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 16:18:52 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 16:18:52 [info]: 🔗 http://localhost:5000
+2026-03-15 16:19:18 [info]: ✅ Razorpay configured
+2026-03-15 16:19:19 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-15 16:19:19 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 16:19:19 [info]: 🔗 http://localhost:5000
+2026-03-15 16:21:01 [info]: ✅ Review added for product: Velvet Prayer Mat by abuzar@gmail.com
+2026-03-15 16:22:17 [info]: ✅ Coupon created: RAMADAN10 by abuzar@gmail.com
+2026-03-15 16:27:11 [info]: ✅ Razorpay configured
+2026-03-15 16:27:12 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-15 16:27:12 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 16:27:12 [info]: 🔗 http://localhost:5000
+2026-03-15 16:27:24 [info]: ✅ Razorpay configured
+2026-03-15 16:27:25 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-15 16:27:25 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 16:27:25 [info]: 🔗 http://localhost:5000
+2026-03-15 16:27:44 [info]: ✅ Razorpay configured
+2026-03-15 16:27:46 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 16:27:46 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 16:27:46 [info]: 🔗 http://localhost:5000
+2026-03-15 16:28:00 [info]: ✅ Razorpay configured
+2026-03-15 16:28:01 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-15 16:28:01 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 16:28:01 [info]: 🔗 http://localhost:5000
+2026-03-15 16:28:58 [info]: ✅ Address added for: abuzar@gmail.com
+2026-03-15 16:30:07 [error]: 500 - Cannot read properties of undefined (reading 'name') - /api/v1/users/profile - PUT - ::1
+2026-03-15 16:31:00 [info]: ✅ Profile updated: abuzar@gmail.com
+2026-03-15 16:33:33 [info]: ✅ Address added for: abuzar@gmail.com
+2026-03-15 16:44:19 [info]: ✅ Razorpay configured
+2026-03-15 16:44:20 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-15 16:44:20 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 16:44:20 [info]: 🔗 http://localhost:5000
+2026-03-15 17:31:45 [info]: 🔄 MongoDB Reconnected
+2026-03-15 17:31:45 [info]: 🔄 MongoDB Reconnected
+2026-03-15 17:53:56 [info]: ✅ Razorpay configured
+2026-03-15 17:53:59 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 17:53:59 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-15 17:53:59 [info]: 🔗 http://localhost:5000
+2026-03-15 18:24:21 [info]: ✅ New user registered: abuzar7993@gmail.com
+2026-03-15 18:24:23 [error]: ❌ Email failed: self-signed certificate in certificate chain
+2026-03-15 18:25:11 [info]: 🛒 Item added to cart: Velvet Prayer Mat by abuzar7993@gmail.com
+2026-03-15 18:25:13 [info]: 🛒 Item added to cart: Ayatul Kursi Frame by abuzar7993@gmail.com
+2026-03-15 19:02:38 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-15 19:02:40 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-15 19:02:41 [error]: 500 - Cast to ObjectId failed for value "attar-and-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-and-fragrances - GET - ::1
+2026-03-15 19:02:42 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-15 19:28:25 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-15 19:28:26 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-15 19:33:34 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-15 19:33:35 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-15 19:33:36 [error]: 500 - Cast to ObjectId failed for value "prayer-items" (type string) at path "category" for model "Product" - /api/v1/products?category=prayer-items - GET - ::1
+2026-03-15 19:33:37 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-15 19:37:39 [info]: 🔄 MongoDB Reconnected
+2026-03-15 19:37:41 [info]: 🔄 MongoDB Reconnected
+2026-03-15 19:58:37 [error]: Auth middleware error: getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 19:58:37 [error]: 401 - Authentication failed. - /api/v1/cart - GET - ::1
+2026-03-15 19:58:37 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net - /api/v1/products/featured - GET - ::1
+2026-03-15 19:58:37 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net - /api/v1/categories - GET - ::1
+2026-03-15 19:58:37 [error]: Auth middleware error: getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 19:58:37 [error]: 401 - Authentication failed. - /api/v1/auth/me - GET - ::1
+2026-03-15 19:59:03 [warn]: ⚠️  MongoDB Disconnected
+2026-03-15 19:59:03 [info]: 🔄 MongoDB Reconnected
+2026-03-15 20:12:01 [info]: 🔄 MongoDB Reconnected
+2026-03-15 20:14:13 [info]: 🛒 Item added to cart: Ramadan Gift Hamper by abuzar7993@gmail.com
+2026-03-15 20:14:15 [info]: 🛒 Item added to cart: Ramadan Gift Hamper by abuzar7993@gmail.com
+2026-03-15 20:14:31 [info]: 🛒 Item added to cart: Ayatul Kursi Frame by abuzar7993@gmail.com
+2026-03-15 20:14:58 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-15 20:14:58 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-15 20:14:59 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-15 20:15:01 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-15 20:15:01 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-15 20:15:02 [error]: 500 - Cast to ObjectId failed for value "prayer-items" (type string) at path "category" for model "Product" - /api/v1/products?category=prayer-items - GET - ::1
+2026-03-15 20:15:02 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-15 20:15:03 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-15 20:15:05 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-15 20:15:06 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-15 20:34:40 [error]: 500 - Cast to ObjectId failed for value "attar-and-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-and-fragrances - GET - ::1
+2026-03-15 20:34:41 [error]: 500 - Cast to ObjectId failed for value "attar-and-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-and-fragrances - GET - ::1
+2026-03-15 21:19:06 [info]: 🔄 MongoDB Reconnected
+2026-03-15 21:19:06 [info]: 🔄 MongoDB Reconnected
+2026-03-15 22:21:01 [error]: Auth middleware error: getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 22:21:01 [error]: 401 - Authentication failed. - /api/v1/auth/me - GET - ::1
+2026-03-15 22:21:01 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net - /api/v1/categories - GET - ::1
+2026-03-15 22:21:02 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net - /api/v1/products/featured - GET - ::1
+2026-03-15 22:21:02 [error]: Auth middleware error: getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 22:21:02 [error]: 401 - Authentication failed. - /api/v1/cart - GET - ::1
+2026-03-15 22:21:03 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net - /api/v1/categories - GET - ::1
+2026-03-15 22:21:03 [error]: Auth middleware error: getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 22:21:03 [error]: 401 - Authentication failed. - /api/v1/cart - GET - ::1
+2026-03-15 22:21:04 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net - /api/v1/products/featured - GET - ::1
+2026-03-15 22:21:04 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net - /api/v1/categories - GET - ::1
+2026-03-15 22:21:05 [error]: Auth middleware error: getaddrinfo ENOTFOUND ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-15 22:21:05 [error]: 401 - Authentication failed. - /api/v1/auth/me - GET - ::1
+2026-03-15 22:21:08 [warn]: ⚠️  MongoDB Disconnected
+2026-03-15 22:21:09 [info]: 🔄 MongoDB Reconnected
+2026-03-15 22:21:40 [error]: 401 - Invalid email or password. - /api/v1/auth/login - POST - ::1
+2026-03-15 22:26:09 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-15 22:26:10 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-15 22:26:10 [error]: 500 - Cast to ObjectId failed for value "prayer-items" (type string) at path "category" for model "Product" - /api/v1/products?category=prayer-items - GET - ::1
+2026-03-15 22:26:11 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-15 22:26:12 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-15 22:37:11 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-15 22:37:11 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-15 22:45:33 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-15 22:45:34 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-15 22:45:39 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-15 22:45:40 [error]: 500 - Cast to ObjectId failed for value "prayer-items" (type string) at path "category" for model "Product" - /api/v1/products?category=prayer-items - GET - ::1
+2026-03-15 22:45:41 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-15 22:45:42 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-16 10:16:58 [info]: ✅ Razorpay configured
+2026-03-16 10:17:00 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-16 10:17:00 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-16 10:17:00 [info]: 🔗 http://localhost:5000
+2026-03-16 10:24:17 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 10:24:17 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 10:24:26 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 10:24:27 [error]: 500 - Cast to ObjectId failed for value "prayer-items" (type string) at path "category" for model "Product" - /api/v1/products?category=prayer-items - GET - ::1
+2026-03-16 10:24:30 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-16 10:24:30 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-16 10:24:31 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-16 10:48:29 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-16 10:48:29 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-16 10:48:40 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-16 10:52:35 [info]: ✅ Razorpay configured
+2026-03-16 10:52:37 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-16 10:52:37 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-16 10:52:37 [info]: 🔗 http://localhost:5000
+2026-03-16 10:52:39 [info]: ✅ Razorpay configured
+2026-03-16 10:52:40 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-16 10:52:40 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-16 10:52:40 [info]: 🔗 http://localhost:5000
+2026-03-16 10:56:43 [info]: ✅ Razorpay configured
+2026-03-16 10:56:47 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-16 10:56:47 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-16 10:56:47 [info]: 🔗 http://localhost:5000
+2026-03-16 10:57:07 [info]: ✅ Razorpay configured
+2026-03-16 10:57:10 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-16 10:57:10 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-16 10:57:10 [info]: 🔗 http://localhost:5000
+2026-03-16 10:57:31 [info]: ✅ Razorpay configured
+2026-03-16 10:57:32 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-16 10:57:32 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-16 10:57:32 [info]: 🔗 http://localhost:5000
+2026-03-16 10:57:55 [info]: ✅ User logged in: abuzar7993@gmail.com
+2026-03-16 11:04:53 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 11:04:53 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 11:04:56 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 11:04:57 [error]: 500 - Cast to ObjectId failed for value "prayer-items" (type string) at path "category" for model "Product" - /api/v1/products?category=prayer-items - GET - ::1
+2026-03-16 11:04:58 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-16 11:05:00 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-16 11:05:00 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-16 11:05:01 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 11:05:07 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 11:05:08 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 11:05:10 [error]: 500 - Cast to ObjectId failed for value "prayer-items" (type string) at path "category" for model "Product" - /api/v1/products?category=prayer-items - GET - ::1
+2026-03-16 11:05:11 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-16 11:05:12 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-16 11:05:12 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-16 11:05:13 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 11:05:17 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 11:05:17 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 11:05:20 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-16 11:05:22 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-16 11:05:23 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-16 11:20:46 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 11:20:46 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 11:26:28 [info]: 🛒 Item added to cart: Ramadan Gift Hamper by abuzar7993@gmail.com
+2026-03-16 11:26:39 [info]: 🛒 Item added to cart: Al-Quran Al-Kareem by abuzar7993@gmail.com
+2026-03-16 11:55:59 [warn]: ⚠️  MongoDB Disconnected
+2026-03-16 11:56:00 [info]: 🔄 MongoDB Reconnected
+2026-03-16 12:11:49 [info]: ✅ Razorpay configured
+2026-03-16 12:11:50 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-16 12:11:50 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-16 12:11:50 [info]: 🔗 http://localhost:5000
+2026-03-16 12:11:56 [info]: ✅ Razorpay configured
+2026-03-16 12:11:59 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-16 12:11:59 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-16 12:11:59 [info]: 🔗 http://localhost:5000
+2026-03-16 12:12:38 [info]: ✅ Razorpay configured
+2026-03-16 12:12:40 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-16 12:12:40 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-16 12:12:40 [info]: 🔗 http://localhost:5000
+2026-03-16 12:12:48 [info]: ✅ Razorpay configured
+2026-03-16 12:12:49 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-16 12:12:49 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-16 12:12:49 [info]: 🔗 http://localhost:5000
+2026-03-16 12:16:28 [info]: ✅ Razorpay configured
+2026-03-16 12:16:29 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-16 12:16:29 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-16 12:16:29 [info]: 🔗 http://localhost:5000
+2026-03-16 13:17:29 [info]: 🔄 MongoDB Reconnected
+2026-03-16 13:17:30 [info]: 🔄 MongoDB Reconnected
+2026-03-16 14:09:03 [warn]: ⚠️  MongoDB Disconnected
+2026-03-16 14:09:03 [info]: 🔄 MongoDB Reconnected
+2026-03-16 14:09:21 [error]: 400 - Product already in wishlist - /api/v1/users/wishlist/69b67f7a510a6233bba9c636 - POST - ::1
+2026-03-16 14:09:30 [error]: 400 - Product already in wishlist - /api/v1/users/wishlist/69b67f7a510a6233bba9c636 - POST - ::1
+2026-03-16 14:11:12 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 14:11:12 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 14:11:15 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 14:11:17 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 14:11:18 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 14:11:19 [error]: 500 - Cast to ObjectId failed for value "islamic-decor" (type string) at path "category" for model "Product" - /api/v1/products?category=islamic-decor - GET - ::1
+2026-03-16 14:11:20 [error]: 500 - Cast to ObjectId failed for value "attar-fragrances" (type string) at path "category" for model "Product" - /api/v1/products?category=attar-fragrances - GET - ::1
+2026-03-16 14:11:21 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets - GET - ::1
+2026-03-16 14:11:24 [error]: 500 - Cast to ObjectId failed for value "gift-sets" (type string) at path "category" for model "Product" - /api/v1/products?category=gift-sets&sort=price - GET - ::1
+2026-03-16 14:11:31 [error]: 500 - Cast to ObjectId failed for value "prayer-items" (type string) at path "category" for model "Product" - /api/v1/products?category=prayer-items - GET - ::1
+2026-03-16 14:12:54 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 14:16:50 [info]: ✅ Razorpay configured
+2026-03-16 14:16:57 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-16 14:16:58 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-16 14:16:58 [info]: 🔗 http://localhost:5000
+2026-03-16 14:17:15 [info]: 🛒 Item added to cart: Ayatul Kursi Frame by abuzar7993@gmail.com
+2026-03-16 14:17:40 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 14:17:41 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 14:17:42 [error]: 500 - Cast to ObjectId failed for value "prayer-items" (type string) at path "category" for model "Product" - /api/v1/products?category=prayer-items - GET - ::1
+2026-03-16 14:21:06 [info]: ✅ Razorpay configured
+2026-03-16 14:21:09 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-16 14:21:09 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-16 14:21:09 [info]: 🔗 http://localhost:5000
+2026-03-16 14:21:18 [info]: 🛒 Item added to cart: Velvet Prayer Mat by abuzar7993@gmail.com
+2026-03-16 14:21:26 [info]: 🛒 Item added to cart: Velvet Prayer Mat by abuzar7993@gmail.com
+2026-03-16 14:21:32 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 14:21:32 [error]: 500 - Cast to ObjectId failed for value "tasbih" (type string) at path "category" for model "Product" - /api/v1/products?category=tasbih - GET - ::1
+2026-03-16 14:21:33 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 14:21:35 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 14:21:36 [error]: 500 - Cast to ObjectId failed for value "quran-and-books" (type string) at path "category" for model "Product" - /api/v1/products?category=quran-and-books - GET - ::1
+2026-03-16 14:23:53 [info]: ✅ Razorpay configured
+2026-03-16 14:23:54 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-16 14:23:54 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-16 14:23:54 [info]: 🔗 http://localhost:5000
+2026-03-16 14:26:53 [info]: ✅ Razorpay configured
+2026-03-16 14:26:56 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-16 14:26:57 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-16 14:26:57 [info]: 🔗 http://localhost:5000
+2026-03-16 14:30:00 [info]: ✅ Razorpay configured
+2026-03-16 14:30:02 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-16 14:30:02 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-16 14:30:02 [info]: 🔗 http://localhost:5000
+2026-03-16 14:41:49 [info]: 🔄 MongoDB Reconnected
+2026-03-16 14:41:49 [info]: 🔄 MongoDB Reconnected
+2026-03-16 14:42:09 [warn]: ⚠️  MongoDB Disconnected
+2026-03-16 14:42:09 [info]: 🔄 MongoDB Reconnected
+2026-03-16 15:16:55 [info]: 🔄 MongoDB Reconnected
+2026-03-16 15:16:55 [info]: 🔄 MongoDB Reconnected
+2026-03-16 15:41:02 [warn]: ⚠️  MongoDB Disconnected
+2026-03-16 15:41:04 [info]: 🔄 MongoDB Reconnected
+2026-03-16 16:23:00 [info]: 🔄 MongoDB Reconnected
+2026-03-16 16:23:01 [info]: 🔄 MongoDB Reconnected
+2026-03-16 16:37:36 [error]: Auth middleware error: getaddrinfo ENOTFOUND ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-16 16:37:36 [error]: 401 - Authentication failed. - /api/v1/cart - GET - ::1
+2026-03-16 16:37:37 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-00.yaeay1t.mongodb.net - /api/v1/products - GET - ::1
+2026-03-16 16:37:37 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-00.yaeay1t.mongodb.net - /api/v1/categories - GET - ::1
+2026-03-16 16:37:38 [error]: Auth middleware error: getaddrinfo ENOTFOUND ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-16 16:37:38 [error]: 401 - Authentication failed. - /api/v1/auth/me - GET - ::1
+2026-03-16 16:37:46 [error]: 500 - getaddrinfo ENOTFOUND ac-enjagy0-shard-00-00.yaeay1t.mongodb.net - /api/v1/products/featured - GET - ::1
+2026-03-16 16:37:58 [error]: Auth middleware error: getaddrinfo ENOTFOUND ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-16 16:37:58 [error]: 401 - Authentication failed. - /api/v1/cart - GET - ::1

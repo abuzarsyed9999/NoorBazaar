@@ -1,0 +1,31 @@
+Phase 1 → Admin Dashboard Panel
+Phase 2 → Order Tracking Page
+Phase 3 → Search with Suggestions
+Phase 4 → Coupon Management
+Phase 5 → Email Order Confirmation
+Phase 6 → Product Comparison
+Phase 7 → Product Reviews with Images
+Phase 8 → Razorpay Payment Integration
+
+✅ Admin Layout (sidebar + header)
+✅ Dashboard Stats (revenue, orders, users, products)
+✅ Sales Chart (monthly revenue)
+✅ Products Management (add, edit, delete, toggle)
+✅ Orders Management (view, update status)
+✅ Users Management (view, toggle, role)
+✅ Categories Management (add, edit, delete)
+✅ Coupons Management (add, edit, delete)
+✅ Reviews Management (approve, delete)
+
+client/src/
+├── pages/admin/
+│   ├── AdminLayout.jsx
+│   ├── AdminDashboard.jsx
+│   ├── AdminProducts.jsx
+│   ├── AdminOrders.jsx
+│   ├── AdminUsers.jsx
+│   ├── AdminCategories.jsx
+│   ├── AdminCoupons.jsx
+│   └── AdminReviews.jsx
+├── redux/slices/
+│   └── adminSlice.js
