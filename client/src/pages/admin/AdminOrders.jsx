@@ -14,13 +14,13 @@ const statusOptions = [
   "Delivered",
   "Cancelled",
 ];
-const statusColors = {
-  Pending: { bg: "#fefce8", color: "#854d0e" },
-  Confirmed: { bg: "#eff6ff", color: "#1d4ed8" },
-  Processing: { bg: "#faf5ff", color: "#7e22ce" },
-  Shipped: { bg: "#f0f9ff", color: "#0369a1" },
-  Delivered: { bg: "#f0fdf4", color: "#15803d" },
-  Cancelled: { bg: "#fff5f5", color: "#dc2626" },
+const statusStyle = {
+  Pending: { bg: "#fefce8", color: "#854d0e", border: "#fde68a" },
+  Confirmed: { bg: "#eff6ff", color: "#1d4ed8", border: "#bfdbfe" },
+  Processing: { bg: "#faf5ff", color: "#7e22ce", border: "#e9d5ff" },
+  Shipped: { bg: "#f0f9ff", color: "#0369a1", border: "#bae6fd" },
+  Delivered: { bg: "#f0fdf4", color: "#15803d", border: "#bbf7d0" },
+  Cancelled: { bg: "#fff5f5", color: "#dc2626", border: "#fca5a5" },
 };
 
 const AdminOrders = () => {
@@ -40,7 +40,7 @@ const AdminOrders = () => {
     setUpdating(null);
     if (r.meta.requestStatus === "fulfilled")
       toast.success(`Order marked as ${status}`);
-    else toast.error(r.payload || "Failed");
+    else toast.error(r.payload || "Failed to update");
   };
 
   const filtered = orders.filter((o) => {
@@ -52,86 +52,59 @@ const AdminOrders = () => {
     return matchSearch && matchFilter;
   });
 
+  const inputStyle = {
+    background: "#ffffff",
+    border: "1px solid #e2e8f0",
+    borderRadius: "10px",
+    padding: "9px 14px",
+    fontFamily: "DM Sans",
+    fontSize: "13px",
+    color: "#0f172a",
+    outline: "none",
+  };
+
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
       {/* Header */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-          gap: "12px",
-        }}
-      >
-        <div>
-          <h2
-            style={{
-              fontFamily: "Cormorant Garamond, serif",
-              fontSize: "24px",
-              fontWeight: "600",
-              color: "#0f172a",
-              margin: 0,
-            }}
-          >
-            Orders
-          </h2>
-          <p
-            style={{
-              fontFamily: "DM Sans",
-              fontSize: "13px",
-              color: "#64748b",
-              margin: "2px 0 0 0",
-            }}
-          >
-            {orders.length} total orders
-          </p>
-        </div>
+      <div>
+        <h2
+          style={{
+            fontFamily: "Cormorant Garamond, serif",
+            fontSize: "26px",
+            fontWeight: "600",
+            color: "#0f172a",
+            margin: 0,
+          }}
+        >
+          Orders
+        </h2>
+        <p
+          style={{
+            fontFamily: "DM Sans",
+            fontSize: "13px",
+            color: "#64748b",
+            margin: "2px 0 0 0",
+          }}
+        >
+          {orders.length} total orders
+        </p>
       </div>
 
       {/* Filters */}
-      <div
-        style={{
-          display: "flex",
-          gap: "10px",
-          flexWrap: "wrap",
-          alignItems: "center",
-        }}
-      >
+      <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
         <input
           type="text"
           placeholder="Search order # or customer..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          style={{
-            flex: 1,
-            minWidth: "200px",
-            background: "#ffffff",
-            border: "1px solid #e2e8f0",
-            borderRadius: "10px",
-            padding: "9px 14px",
-            fontFamily: "DM Sans",
-            fontSize: "13px",
-            color: "#0f172a",
-            outline: "none",
-          }}
+          style={{ ...inputStyle, flex: 1, minWidth: "200px" }}
           onFocus={(e) => (e.currentTarget.style.borderColor = "#16a34a")}
           onBlur={(e) => (e.currentTarget.style.borderColor = "#e2e8f0")}
         />
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          style={{
-            background: "#ffffff",
-            border: "1px solid #e2e8f0",
-            borderRadius: "10px",
-            padding: "9px 14px",
-            fontFamily: "DM Sans",
-            fontSize: "13px",
-            color: "#0f172a",
-            outline: "none",
-            cursor: "pointer",
-          }}
+          style={{ ...inputStyle, cursor: "pointer" }}
           onFocus={(e) => (e.currentTarget.style.borderColor = "#16a34a")}
           onBlur={(e) => (e.currentTarget.style.borderColor = "#e2e8f0")}
         >
@@ -153,8 +126,8 @@ const AdminOrders = () => {
               <div
                 key={i}
                 style={{
-                  height: "60px",
-                  borderRadius: "12px",
+                  height: "56px",
+                  borderRadius: "10px",
                   background: "#f0fdf4",
                   animation: "shimmer 1.5s infinite",
                 }}
@@ -176,7 +149,7 @@ const AdminOrders = () => {
                 width: "100%",
                 borderCollapse: "collapse",
                 fontFamily: "DM Sans",
-                minWidth: "700px",
+                minWidth: "750px",
               }}
             >
               <thead
@@ -194,7 +167,7 @@ const AdminOrders = () => {
                     "Payment",
                     "Status",
                     "Date",
-                    "Action",
+                    "Update",
                   ].map((h) => (
                     <th
                       key={h}
@@ -217,7 +190,7 @@ const AdminOrders = () => {
               <tbody>
                 {filtered.map((order) => {
                   const sc =
-                    statusColors[order.orderStatus] || statusColors.Pending;
+                    statusStyle[order.orderStatus] || statusStyle.Pending;
                   return (
                     <tr
                       key={order._id}
@@ -258,7 +231,7 @@ const AdminOrders = () => {
                           color: "#64748b",
                         }}
                       >
-                        {order.items?.length} items
+                        {order.items?.length}
                       </td>
                       <td
                         style={{
@@ -274,7 +247,7 @@ const AdminOrders = () => {
                       <td style={{ padding: "12px 16px" }}>
                         <span
                           style={{
-                            fontSize: "11px",
+                            fontSize: "12px",
                             fontWeight: "600",
                             color:
                               order.paymentStatus === "Paid"
@@ -294,6 +267,7 @@ const AdminOrders = () => {
                             borderRadius: "20px",
                             background: sc.bg,
                             color: sc.color,
+                            border: `1px solid ${sc.border}`,
                           }}
                         >
                           {order.orderStatus}
@@ -321,8 +295,9 @@ const AdminOrders = () => {
                           }
                           disabled={
                             updating === order._id ||
-                            order.orderStatus === "Delivered" ||
-                            order.orderStatus === "Cancelled"
+                            ["Delivered", "Cancelled"].includes(
+                              order.orderStatus,
+                            )
                           }
                           style={{
                             background: "#f8fafc",
@@ -357,18 +332,18 @@ const AdminOrders = () => {
             </table>
           </div>
           {filtered.length === 0 && (
-            <div style={{ padding: "48px", textAlign: "center" }}>
-              <p
-                style={{
-                  fontFamily: "DM Sans",
-                  fontSize: "14px",
-                  color: "#94a3b8",
-                  margin: 0,
-                }}
-              >
-                No orders found
-              </p>
-            </div>
+            <p
+              style={{
+                fontFamily: "DM Sans",
+                fontSize: "14px",
+                color: "#94a3b8",
+                textAlign: "center",
+                padding: "48px 0",
+                margin: 0,
+              }}
+            >
+              No orders found
+            </p>
           )}
         </div>
       )}

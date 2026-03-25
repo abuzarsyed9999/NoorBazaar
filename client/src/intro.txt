@@ -1,6 +1,8 @@
 Phase 1 → Admin Dashboard Panel
 Phase 2 → Order Tracking Page
+
 Phase 3 → Search with Suggestions
+
 Phase 4 → Coupon Management
 Phase 5 → Email Order Confirmation
 Phase 6 → Product Comparison

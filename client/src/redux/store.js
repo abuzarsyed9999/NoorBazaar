@@ -5,6 +5,9 @@ import cartReducer from "./slices/cartSlice";
 import orderReducer from "./slices/orderSlice";
 import wishlistReducer from "./slices/wishlistSlice";
 import adminReducer from "./slices/adminSlice";
+import compareReducer from "./slices/compareSlice";
+import reviewReducer from "./slices/reviewSlice";
+import paymentReducer from "./slices/paymentSlice"; // ← ADD
 
 const store = configureStore({
   reducer: {
@@ -14,8 +17,10 @@ const store = configureStore({
     orders: orderReducer,
     wishlist: wishlistReducer,
     admin: adminReducer,
+    compare: compareReducer,
+    reviews: reviewReducer,
+    payment: paymentReducer, // ← ADD
   },
-  devTools: import.meta.env.MODE !== "production",
 });
 
 export default store;

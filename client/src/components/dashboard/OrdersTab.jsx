@@ -433,6 +433,7 @@ const OrdersTab = () => {
                   {order.paymentStatus}
                 </span>
               </span>
+              // In OrdersTab.jsx — update the Link
               <Link
                 to={`/orders/${order._id}`}
                 style={{

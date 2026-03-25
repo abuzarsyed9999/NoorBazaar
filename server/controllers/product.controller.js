@@ -1489,3 +1489,57 @@ exports.getAdminProducts = async (req, res, next) => {
     next(error);
   }
 };
+
+// ==============================
+// @desc    Get Search Suggestions
+// @route   GET /api/v1/products/search/suggestions
+// @access  Public
+// ==============================
+exports.getSearchSuggestions = async (req, res, next) => {
+  try {
+    const { q } = req.query;
+
+    if (!q || q.trim().length < 2) {
+      return res.status(200).json({
+        success: true,
+        data: { products: [], categories: [] },
+      });
+    }
+
+    const keyword = q.trim();
+    const regex = { $regex: keyword, $options: "i" };
+
+    // ── Products ──
+    const products = await Product.find({
+      isActive: true,
+      $or: [
+        { name: regex },
+        { nameArabic: regex },
+        { shortDescription: regex },
+        { tags: regex },
+      ],
+    })
+      .select(
+        "name nameArabic images price originalPrice slug ratings category",
+      )
+      .populate("category", "name slug")
+      .limit(6)
+      .lean();
+
+    // ── Categories ──
+    const categories = await Category.find({
+      isActive: true,
+      $or: [{ name: regex }, { nameArabic: regex }],
+    })
+      .select("name nameArabic slug")
+      .limit(3)
+      .lean();
+
+    res.status(200).json({
+      success: true,
+      data: { products, categories },
+    });
+  } catch (error) {
+    next(error);
+  }
+};

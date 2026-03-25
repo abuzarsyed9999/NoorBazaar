@@ -10,7 +10,6 @@ const AdminCategories = () => {
   const [showForm, setShowForm] = useState(false);
   const [saving, setSaving] = useState(false);
   const [deleting, setDeleting] = useState(null);
-
   const [name, setName] = useState("");
   const [nameArabic, setNameArabic] = useState("");
   const [description, setDescription] = useState("");
@@ -28,7 +27,7 @@ const AdminCategories = () => {
       }
       setSaving(true);
       try {
-        await API.post("/categories", { name, nameArabic, description });
+        await API.post("/admin/categories", { name, nameArabic, description });
         toast.success("Category added!");
         setShowForm(false);
         setName("");
@@ -45,10 +44,10 @@ const AdminCategories = () => {
   );
 
   const handleDelete = async (id, catName) => {
-    if (!window.confirm(`Delete category "${catName}"?`)) return;
+    if (!window.confirm(`Delete "${catName}"?`)) return;
     setDeleting(id);
     try {
-      await API.delete(`/categories/${id}`);
+      await API.delete(`/admin/categories/${id}`);
       toast.success("Category deleted");
       dispatch(fetchCategories());
     } catch (err) {
@@ -60,8 +59,8 @@ const AdminCategories = () => {
 
   const handleToggle = async (id) => {
     try {
-      await API.put(`/categories/${id}/toggle`);
-      toast.success("Category status updated");
+      await API.put(`/admin/categories/${id}/toggle`);
+      toast.success("Category updated");
       dispatch(fetchCategories());
     } catch {
       toast.error("Failed to update");
@@ -83,7 +82,6 @@ const AdminCategories = () => {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-      {/* Header */}
       <div
         style={{
           display: "flex",
@@ -97,7 +95,7 @@ const AdminCategories = () => {
           <h2
             style={{
               fontFamily: "Cormorant Garamond, serif",
-              fontSize: "24px",
+              fontSize: "26px",
               fontWeight: "600",
               color: "#0f172a",
               margin: 0,
@@ -128,13 +126,13 @@ const AdminCategories = () => {
             fontWeight: "600",
             border: showForm ? "1px solid #e2e8f0" : "none",
             cursor: "pointer",
+            boxShadow: showForm ? "none" : "0 4px 12px rgba(22,163,74,0.2)",
           }}
         >
           {showForm ? "✕ Cancel" : "+ Add Category"}
         </button>
       </div>
 
-      {/* Add Form */}
       {showForm && (
         <form
           onSubmit={handleAdd}
@@ -256,7 +254,6 @@ const AdminCategories = () => {
         </form>
       )}
 
-      {/* Grid */}
       {loading ? (
         <div
           style={{
@@ -364,7 +361,7 @@ const AdminCategories = () => {
                     fontFamily: "DM Sans",
                     fontSize: "12px",
                     color: "#94a3b8",
-                    margin: "0 0 10px 0",
+                    margin: "0 0 6px 0",
                   }}
                 >
                   {cat.description}
@@ -378,7 +375,7 @@ const AdminCategories = () => {
                   margin: "0 0 12px 0",
                 }}
               >
-                Slug: {cat.slug}
+                /{cat.slug}
               </p>
               <div style={{ display: "flex", gap: "8px" }}>
                 <button
@@ -394,7 +391,6 @@ const AdminCategories = () => {
                     background: "#f0fdf4",
                     border: "1px solid #bbf7d0",
                     color: "#15803d",
-                    transition: "background 0.2s",
                   }}
                   onMouseEnter={(e) =>
                     (e.currentTarget.style.background = "#dcfce7")
@@ -420,7 +416,6 @@ const AdminCategories = () => {
                     border: "1px solid #fca5a5",
                     color: "#dc2626",
                     opacity: deleting === cat._id ? 0.6 : 1,
-                    transition: "background 0.2s",
                   }}
                   onMouseEnter={(e) =>
                     (e.currentTarget.style.background = "#fee2e2")

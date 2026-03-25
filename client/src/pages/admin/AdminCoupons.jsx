@@ -17,6 +17,9 @@ const AdminCoupons = () => {
   const [expiresAt, setExpiresAt] = useState("");
   const [usageLimit, setUsageLimit] = useState("");
 
+  // ✅ Today for min date
+  const todayStr = new Date().toISOString().split("T")[0];
+
   useEffect(() => {
     fetchCoupons();
   }, []);
@@ -24,7 +27,7 @@ const AdminCoupons = () => {
   const fetchCoupons = async () => {
     setLoading(true);
     try {
-      const { data } = await API.get("/coupons");
+      const { data } = await API.get("/admin/coupons");
       setCoupons(data.data || []);
     } catch {
       toast.error("Failed to load coupons");
@@ -33,32 +36,57 @@ const AdminCoupons = () => {
     }
   };
 
+  const resetForm = () => {
+    setCode("");
+    setDiscount("");
+    setMinOrder("");
+    setMaxDiscount("");
+    setExpiresAt("");
+    setUsageLimit("");
+    setDiscountType("percentage");
+  };
+
   const handleAdd = useCallback(
     async (e) => {
       e.preventDefault();
-      if (!code || !discount) {
-        toast.error("Code and discount are required");
+      if (!code.trim()) {
+        toast.error("Coupon code is required");
         return;
       }
+      if (!discount || Number(discount) <= 0) {
+        toast.error("Discount value is required");
+        return;
+      }
+      if (!expiresAt) {
+        toast.error("Expiry date is required");
+        return;
+      }
+      if (discountType === "percentage" && Number(discount) > 100) {
+        toast.error("Percentage cannot exceed 100");
+        return;
+      }
+
+      // ✅ Parse date correctly
+      const parsedExpiry = new Date(expiresAt + "T23:59:59");
+      if (isNaN(parsedExpiry.getTime())) {
+        toast.error("Invalid expiry date");
+        return;
+      }
+
       setSaving(true);
       try {
-        await API.post("/coupons", {
-          code: code.toUpperCase(),
+        await API.post("/admin/coupons", {
+          code: code.toUpperCase().trim(),
           discountType,
-          discount: Number(discount),
+          discount: Number(discount), // backend maps to discountValue
           minOrderAmount: Number(minOrder) || 0,
           maxDiscountAmount: Number(maxDiscount) || undefined,
-          expiresAt: expiresAt || undefined,
+          expiresAt: parsedExpiry.toISOString(), // backend maps to expiryDate
           usageLimit: Number(usageLimit) || undefined,
         });
         toast.success("Coupon created! 🎟️");
         setShowForm(false);
-        setCode("");
-        setDiscount("");
-        setMinOrder("");
-        setMaxDiscount("");
-        setExpiresAt("");
-        setUsageLimit("");
+        resetForm();
         fetchCoupons();
       } catch (err) {
         toast.error(err.response?.data?.message || "Failed to create coupon");
@@ -79,7 +107,7 @@ const AdminCoupons = () => {
 
   const handleToggle = async (id) => {
     try {
-      await API.put(`/coupons/${id}/toggle`);
+      await API.put(`/admin/coupons/${id}/toggle`);
       toast.success("Coupon updated");
       fetchCoupons();
     } catch {
@@ -91,7 +119,7 @@ const AdminCoupons = () => {
     if (!window.confirm(`Delete coupon "${couponCode}"?`)) return;
     setDeleting(id);
     try {
-      await API.delete(`/coupons/${id}`);
+      await API.delete(`/admin/coupons/${id}`);
       toast.success("Coupon deleted");
       fetchCoupons();
     } catch {
@@ -113,9 +141,18 @@ const AdminCoupons = () => {
     outline: "none",
     boxSizing: "border-box",
   };
+  const labelStyle = {
+    display: "block",
+    fontFamily: "DM Sans",
+    fontSize: "12px",
+    fontWeight: "500",
+    color: "#64748b",
+    marginBottom: "5px",
+  };
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+      {/* Header */}
       <div
         style={{
           display: "flex",
@@ -129,7 +166,7 @@ const AdminCoupons = () => {
           <h2
             style={{
               fontFamily: "Cormorant Garamond, serif",
-              fontSize: "24px",
+              fontSize: "26px",
               fontWeight: "600",
               color: "#0f172a",
               margin: 0,
@@ -149,7 +186,10 @@ const AdminCoupons = () => {
           </p>
         </div>
         <button
-          onClick={() => setShowForm((v) => !v)}
+          onClick={() => {
+            setShowForm((v) => !v);
+            if (showForm) resetForm();
+          }}
           style={{
             padding: "10px 20px",
             borderRadius: "10px",
@@ -160,13 +200,14 @@ const AdminCoupons = () => {
             fontWeight: "600",
             border: showForm ? "1px solid #e2e8f0" : "none",
             cursor: "pointer",
+            boxShadow: showForm ? "none" : "0 4px 12px rgba(22,163,74,0.2)",
           }}
         >
           {showForm ? "✕ Cancel" : "+ Create Coupon"}
         </button>
       </div>
 
-      {/* Add Form */}
+      {/* Create Form */}
       {showForm && (
         <form
           onSubmit={handleAdd}
@@ -199,22 +240,16 @@ const AdminCoupons = () => {
             }}
           >
             <div>
-              <label
-                style={{
-                  display: "block",
-                  fontFamily: "DM Sans",
-                  fontSize: "12px",
-                  fontWeight: "500",
-                  color: "#64748b",
-                  marginBottom: "5px",
-                }}
-              >
-                Coupon Code *
-              </label>
+              <label style={labelStyle}>Coupon Code *</label>
               <input
                 value={code}
-                onChange={(e) => setCode(e.target.value.toUpperCase())}
+                onChange={(e) =>
+                  setCode(
+                    e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ""),
+                  )
+                }
                 placeholder="RAMADAN10"
+                maxLength={20}
                 style={{
                   ...inputStyle,
                   textTransform: "uppercase",
@@ -225,20 +260,20 @@ const AdminCoupons = () => {
                 onFocus={(e) => (e.currentTarget.style.borderColor = "#16a34a")}
                 onBlur={(e) => (e.currentTarget.style.borderColor = "#e2e8f0")}
               />
-            </div>
-            <div>
-              <label
+              <p
                 style={{
-                  display: "block",
                   fontFamily: "DM Sans",
-                  fontSize: "12px",
-                  fontWeight: "500",
-                  color: "#64748b",
-                  marginBottom: "5px",
+                  fontSize: "10px",
+                  color: "#94a3b8",
+                  margin: "3px 0 0 0",
                 }}
               >
-                Discount Type
-              </label>
+                Letters and numbers only
+              </p>
+            </div>
+
+            <div>
+              <label style={labelStyle}>Discount Type *</label>
               <select
                 value={discountType}
                 onChange={(e) => setDiscountType(e.target.value)}
@@ -247,125 +282,151 @@ const AdminCoupons = () => {
                 onBlur={(e) => (e.currentTarget.style.borderColor = "#e2e8f0")}
               >
                 <option value="percentage">Percentage (%)</option>
-                <option value="fixed">Fixed (₹)</option>
+                <option value="fixed">Fixed Amount (₹)</option>
               </select>
             </div>
+
             <div>
-              <label
-                style={{
-                  display: "block",
-                  fontFamily: "DM Sans",
-                  fontSize: "12px",
-                  fontWeight: "500",
-                  color: "#64748b",
-                  marginBottom: "5px",
-                }}
-              >
-                Discount Value *
+              <label style={labelStyle}>
+                Discount Value *{" "}
+                {discountType === "percentage" ? "(1–100%)" : "(₹)"}
               </label>
               <input
                 type="number"
                 value={discount}
                 onChange={(e) => setDiscount(e.target.value)}
                 placeholder={discountType === "percentage" ? "10" : "100"}
+                min="1"
+                max={discountType === "percentage" ? "100" : undefined}
                 style={inputStyle}
                 required
                 onFocus={(e) => (e.currentTarget.style.borderColor = "#16a34a")}
                 onBlur={(e) => (e.currentTarget.style.borderColor = "#e2e8f0")}
               />
             </div>
+
             <div>
-              <label
-                style={{
-                  display: "block",
-                  fontFamily: "DM Sans",
-                  fontSize: "12px",
-                  fontWeight: "500",
-                  color: "#64748b",
-                  marginBottom: "5px",
-                }}
-              >
-                Min Order (₹)
-              </label>
+              <label style={labelStyle}>Min Order Amount (₹)</label>
               <input
                 type="number"
                 value={minOrder}
                 onChange={(e) => setMinOrder(e.target.value)}
                 placeholder="500"
+                min="0"
                 style={inputStyle}
                 onFocus={(e) => (e.currentTarget.style.borderColor = "#16a34a")}
                 onBlur={(e) => (e.currentTarget.style.borderColor = "#e2e8f0")}
               />
             </div>
+
+            {discountType === "percentage" && (
+              <div>
+                <label style={labelStyle}>Max Discount Amount (₹)</label>
+                <input
+                  type="number"
+                  value={maxDiscount}
+                  onChange={(e) => setMaxDiscount(e.target.value)}
+                  placeholder="200"
+                  min="0"
+                  style={inputStyle}
+                  onFocus={(e) =>
+                    (e.currentTarget.style.borderColor = "#16a34a")
+                  }
+                  onBlur={(e) =>
+                    (e.currentTarget.style.borderColor = "#e2e8f0")
+                  }
+                />
+              </div>
+            )}
+
+            {/* ✅ Required expiry date */}
             <div>
-              <label
-                style={{
-                  display: "block",
-                  fontFamily: "DM Sans",
-                  fontSize: "12px",
-                  fontWeight: "500",
-                  color: "#64748b",
-                  marginBottom: "5px",
-                }}
-              >
-                Max Discount (₹)
-              </label>
-              <input
-                type="number"
-                value={maxDiscount}
-                onChange={(e) => setMaxDiscount(e.target.value)}
-                placeholder="200"
-                style={inputStyle}
-                onFocus={(e) => (e.currentTarget.style.borderColor = "#16a34a")}
-                onBlur={(e) => (e.currentTarget.style.borderColor = "#e2e8f0")}
-              />
-            </div>
-            <div>
-              <label
-                style={{
-                  display: "block",
-                  fontFamily: "DM Sans",
-                  fontSize: "12px",
-                  fontWeight: "500",
-                  color: "#64748b",
-                  marginBottom: "5px",
-                }}
-              >
-                Expires At
+              <label style={labelStyle}>
+                Expiry Date <span style={{ color: "#ef4444" }}>*</span>
               </label>
               <input
                 type="date"
                 value={expiresAt}
                 onChange={(e) => setExpiresAt(e.target.value)}
-                style={inputStyle}
+                min={todayStr}
+                style={{ ...inputStyle, colorScheme: "light" }}
+                required
                 onFocus={(e) => (e.currentTarget.style.borderColor = "#16a34a")}
                 onBlur={(e) => (e.currentTarget.style.borderColor = "#e2e8f0")}
               />
+              {expiresAt && (
+                <p
+                  style={{
+                    fontFamily: "DM Sans",
+                    fontSize: "11px",
+                    color: "#16a34a",
+                    margin: "3px 0 0 0",
+                  }}
+                >
+                  ✅{" "}
+                  {new Date(expiresAt).toLocaleDateString("en-IN", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </p>
+              )}
             </div>
+
             <div>
-              <label
-                style={{
-                  display: "block",
-                  fontFamily: "DM Sans",
-                  fontSize: "12px",
-                  fontWeight: "500",
-                  color: "#64748b",
-                  marginBottom: "5px",
-                }}
-              >
-                Usage Limit
-              </label>
+              <label style={labelStyle}>Usage Limit (optional)</label>
               <input
                 type="number"
                 value={usageLimit}
                 onChange={(e) => setUsageLimit(e.target.value)}
                 placeholder="100"
+                min="1"
                 style={inputStyle}
                 onFocus={(e) => (e.currentTarget.style.borderColor = "#16a34a")}
                 onBlur={(e) => (e.currentTarget.style.borderColor = "#e2e8f0")}
               />
             </div>
           </div>
+
+          {/* Live Preview */}
+          {code && discount && expiresAt && (
+            <div
+              style={{
+                padding: "12px 16px",
+                borderRadius: "10px",
+                background: "#f0fdf4",
+                border: "1px solid #bbf7d0",
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: "DM Sans",
+                  fontSize: "12px",
+                  fontWeight: "600",
+                  color: "#15803d",
+                  margin: 0,
+                }}
+              >
+                🎟️ Preview: <strong>{code}</strong>
+                {" — "}
+                {discountType === "percentage"
+                  ? `${discount}% off`
+                  : `₹${discount} off`}
+                {maxDiscount && discountType === "percentage"
+                  ? ` (max ₹${maxDiscount})`
+                  : ""}
+                {minOrder ? ` on orders ≥ ₹${minOrder}` : ""}
+                {" · Expires "}
+                {new Date(expiresAt).toLocaleDateString("en-IN", {
+                  day: "numeric",
+                  month: "short",
+                  year: "numeric",
+                })}
+                {usageLimit ? ` · ${usageLimit} uses` : ""}
+              </p>
+            </div>
+          )}
+
           <button
             type="submit"
             disabled={saving}
@@ -381,14 +442,19 @@ const AdminCoupons = () => {
               border: "none",
               cursor: saving ? "not-allowed" : "pointer",
               opacity: saving ? 0.7 : 1,
+              boxShadow: "0 4px 12px rgba(22,163,74,0.2)",
             }}
+            onMouseEnter={(e) => {
+              if (!saving) e.currentTarget.style.background = "#15803d";
+            }}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "#16a34a")}
           >
-            {saving ? "Creating..." : "Create Coupon"}
+            {saving ? "Creating..." : "🎟️ Create Coupon"}
           </button>
         </form>
       )}
 
-      {/* Coupons Table */}
+      {/* Table */}
       {loading ? (
         <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           {Array(4)
@@ -397,8 +463,8 @@ const AdminCoupons = () => {
               <div
                 key={i}
                 style={{
-                  height: "60px",
-                  borderRadius: "12px",
+                  height: "56px",
+                  borderRadius: "10px",
                   background: "#f0fdf4",
                   animation: "shimmer 1.5s infinite",
                 }}
@@ -420,7 +486,7 @@ const AdminCoupons = () => {
                 width: "100%",
                 borderCollapse: "collapse",
                 fontFamily: "DM Sans",
-                minWidth: "600px",
+                minWidth: "700px",
               }}
             >
               <thead
@@ -460,12 +526,16 @@ const AdminCoupons = () => {
               </thead>
               <tbody>
                 {coupons.map((c) => {
+                  // ✅ Use correct model field names
                   const expired =
-                    c.expiresAt && new Date(c.expiresAt) < new Date();
+                    c.expiryDate && new Date(c.expiryDate) < new Date();
                   return (
                     <tr
                       key={c._id}
-                      style={{ borderBottom: "1px solid #f8fafc" }}
+                      style={{
+                        borderBottom: "1px solid #f8fafc",
+                        transition: "background 0.15s",
+                      }}
                       onMouseEnter={(e) =>
                         (e.currentTarget.style.background = "#f8fffe")
                       }
@@ -500,6 +570,7 @@ const AdminCoupons = () => {
                       >
                         {c.discountType}
                       </td>
+                      {/* ✅ discountValue not discount */}
                       <td
                         style={{
                           padding: "12px 16px",
@@ -509,8 +580,21 @@ const AdminCoupons = () => {
                         }}
                       >
                         {c.discountType === "percentage"
-                          ? `${c.discount}%`
-                          : `₹${c.discount}`}
+                          ? `${c.discountValue}%`
+                          : `₹${c.discountValue}`}
+                        {c.maxDiscountAmount &&
+                          c.discountType === "percentage" && (
+                            <span
+                              style={{
+                                fontSize: "10px",
+                                color: "#94a3b8",
+                                fontWeight: "400",
+                                display: "block",
+                              }}
+                            >
+                              Max ₹{c.maxDiscountAmount}
+                            </span>
+                          )}
                       </td>
                       <td
                         style={{
@@ -519,8 +603,9 @@ const AdminCoupons = () => {
                           color: "#64748b",
                         }}
                       >
-                        ₹{c.minOrderAmount || 0}
+                        {c.minOrderAmount > 0 ? `₹${c.minOrderAmount}` : "—"}
                       </td>
+                      {/* ✅ maxUsageLimit not usageLimit */}
                       <td
                         style={{
                           padding: "12px 16px",
@@ -529,8 +614,29 @@ const AdminCoupons = () => {
                         }}
                       >
                         {c.usedCount || 0}
-                        {c.usageLimit ? `/${c.usageLimit}` : ""}
+                        {c.maxUsageLimit ? `/${c.maxUsageLimit}` : ""}
+                        {c.maxUsageLimit && (
+                          <div
+                            style={{
+                              height: "3px",
+                              background: "#f0f0f0",
+                              borderRadius: "2px",
+                              marginTop: "4px",
+                              width: "60px",
+                            }}
+                          >
+                            <div
+                              style={{
+                                height: "100%",
+                                width: `${Math.min(100, ((c.usedCount || 0) / c.maxUsageLimit) * 100)}%`,
+                                background: "#16a34a",
+                                borderRadius: "2px",
+                              }}
+                            />
+                          </div>
+                        )}
                       </td>
+                      {/* ✅ expiryDate not expiresAt */}
                       <td
                         style={{
                           padding: "12px 16px",
@@ -539,8 +645,12 @@ const AdminCoupons = () => {
                           whiteSpace: "nowrap",
                         }}
                       >
-                        {c.expiresAt
-                          ? new Date(c.expiresAt).toLocaleDateString("en-IN")
+                        {c.expiryDate
+                          ? new Date(c.expiryDate).toLocaleDateString("en-IN", {
+                              day: "numeric",
+                              month: "short",
+                              year: "numeric",
+                            })
                           : "No expiry"}
                       </td>
                       <td style={{ padding: "12px 16px" }}>
@@ -578,6 +688,12 @@ const AdminCoupons = () => {
                               border: "1px solid #bbf7d0",
                               color: "#15803d",
                             }}
+                            onMouseEnter={(e) =>
+                              (e.currentTarget.style.background = "#dcfce7")
+                            }
+                            onMouseLeave={(e) =>
+                              (e.currentTarget.style.background = "#f0fdf4")
+                            }
                           >
                             {c.isActive ? "Disable" : "Enable"}
                           </button>
@@ -596,6 +712,12 @@ const AdminCoupons = () => {
                               color: "#dc2626",
                               opacity: deleting === c._id ? 0.6 : 1,
                             }}
+                            onMouseEnter={(e) =>
+                              (e.currentTarget.style.background = "#fee2e2")
+                            }
+                            onMouseLeave={(e) =>
+                              (e.currentTarget.style.background = "#fff5f5")
+                            }
                           >
                             {deleting === c._id ? "..." : "Delete"}
                           </button>
@@ -608,18 +730,19 @@ const AdminCoupons = () => {
             </table>
           </div>
           {coupons.length === 0 && (
-            <p
-              style={{
-                fontFamily: "DM Sans",
-                fontSize: "14px",
-                color: "#94a3b8",
-                textAlign: "center",
-                padding: "48px 0",
-                margin: 0,
-              }}
-            >
-              No coupons yet. Create your first one!
-            </p>
+            <div style={{ padding: "48px", textAlign: "center" }}>
+              <div style={{ fontSize: "40px", marginBottom: "12px" }}>🎟️</div>
+              <p
+                style={{
+                  fontFamily: "DM Sans",
+                  fontSize: "14px",
+                  color: "#94a3b8",
+                  margin: 0,
+                }}
+              >
+                No coupons yet. Create your first one!
+              </p>
+            </div>
           )}
         </div>
       )}

@@ -14,8 +14,8 @@ const AdminProducts = () => {
   const [catFilter, setCatFilter] = useState("all");
   const [deleting, setDeleting] = useState(null);
   const [showAdd, setShowAdd] = useState(false);
-
-  // Add product form state
+  const [saving, setSaving] = useState(false);
+  const [imageFile, setImageFile] = useState(null);
   const [form, setForm] = useState({
     name: "",
     price: "",
@@ -25,8 +25,6 @@ const AdminProducts = () => {
     shortDescription: "",
     category: "",
   });
-  const [imageFile, setImageFile] = useState(null);
-  const [saving, setSaving] = useState(false);
 
   useEffect(() => {
     dispatch(fetchProducts("?limit=100"));
@@ -37,7 +35,7 @@ const AdminProducts = () => {
     if (!window.confirm(`Delete "${productName}"?`)) return;
     setDeleting(productId);
     try {
-      await API.delete(`/products/${productId}`);
+      await API.delete(`/admin/products/${productId}`);
       toast.success("Product deleted");
       dispatch(fetchProducts("?limit=100"));
     } catch (err) {
@@ -47,9 +45,9 @@ const AdminProducts = () => {
     }
   };
 
-  const handleToggle = async (productId, currentStatus) => {
+  const handleToggle = async (productId) => {
     try {
-      await API.put(`/products/${productId}`, { isActive: !currentStatus });
+      await API.put(`/admin/products/${productId}/toggle`);
       toast.success("Product updated");
       dispatch(fetchProducts("?limit=100"));
     } catch {
@@ -60,7 +58,7 @@ const AdminProducts = () => {
   const handleAddProduct = async (e) => {
     e.preventDefault();
     if (!form.name || !form.price || !form.category) {
-      toast.error("Name, price and category are required");
+      toast.error("Name, price and category required");
       return;
     }
     setSaving(true);
@@ -96,10 +94,7 @@ const AdminProducts = () => {
   const filtered = products.filter((p) => {
     const matchSearch =
       !search || p.name?.toLowerCase().includes(search.toLowerCase());
-    const matchCat =
-      catFilter === "all" ||
-      p.category?._id === catFilter ||
-      p.category?.slug === catFilter;
+    const matchCat = catFilter === "all" || p.category?._id === catFilter;
     return matchSearch && matchCat;
   });
 
@@ -114,6 +109,14 @@ const AdminProducts = () => {
     color: "#0f172a",
     outline: "none",
     boxSizing: "border-box",
+  };
+  const labelStyle = {
+    display: "block",
+    fontFamily: "DM Sans",
+    fontSize: "12px",
+    fontWeight: "500",
+    color: "#64748b",
+    marginBottom: "5px",
   };
 
   return (
@@ -132,7 +135,7 @@ const AdminProducts = () => {
           <h2
             style={{
               fontFamily: "Cormorant Garamond, serif",
-              fontSize: "24px",
+              fontSize: "26px",
               fontWeight: "600",
               color: "#0f172a",
               margin: 0,
@@ -164,6 +167,7 @@ const AdminProducts = () => {
             border: showAdd ? "1px solid #e2e8f0" : "none",
             cursor: "pointer",
             transition: "all 0.2s",
+            boxShadow: showAdd ? "none" : "0 4px 12px rgba(22,163,74,0.2)",
           }}
         >
           {showAdd ? "✕ Cancel" : "+ Add Product"}
@@ -195,20 +199,9 @@ const AdminProducts = () => {
           >
             Add New Product
           </p>
-          <div className="ap-grid">
+          <div className="ap-form-grid">
             <div>
-              <label
-                style={{
-                  display: "block",
-                  fontFamily: "DM Sans",
-                  fontSize: "12px",
-                  fontWeight: "500",
-                  color: "#64748b",
-                  marginBottom: "5px",
-                }}
-              >
-                Product Name *
-              </label>
+              <label style={labelStyle}>Product Name *</label>
               <input
                 value={form.name}
                 onChange={(e) =>
@@ -222,18 +215,7 @@ const AdminProducts = () => {
               />
             </div>
             <div>
-              <label
-                style={{
-                  display: "block",
-                  fontFamily: "DM Sans",
-                  fontSize: "12px",
-                  fontWeight: "500",
-                  color: "#64748b",
-                  marginBottom: "5px",
-                }}
-              >
-                Category *
-              </label>
+              <label style={labelStyle}>Category *</label>
               <select
                 value={form.category}
                 onChange={(e) =>
@@ -253,18 +235,7 @@ const AdminProducts = () => {
               </select>
             </div>
             <div>
-              <label
-                style={{
-                  display: "block",
-                  fontFamily: "DM Sans",
-                  fontSize: "12px",
-                  fontWeight: "500",
-                  color: "#64748b",
-                  marginBottom: "5px",
-                }}
-              >
-                Price (₹) *
-              </label>
+              <label style={labelStyle}>Price (₹) *</label>
               <input
                 type="number"
                 value={form.price}
@@ -279,18 +250,7 @@ const AdminProducts = () => {
               />
             </div>
             <div>
-              <label
-                style={{
-                  display: "block",
-                  fontFamily: "DM Sans",
-                  fontSize: "12px",
-                  fontWeight: "500",
-                  color: "#64748b",
-                  marginBottom: "5px",
-                }}
-              >
-                Original Price (₹)
-              </label>
+              <label style={labelStyle}>Original Price (₹)</label>
               <input
                 type="number"
                 value={form.originalPrice}
@@ -304,18 +264,7 @@ const AdminProducts = () => {
               />
             </div>
             <div>
-              <label
-                style={{
-                  display: "block",
-                  fontFamily: "DM Sans",
-                  fontSize: "12px",
-                  fontWeight: "500",
-                  color: "#64748b",
-                  marginBottom: "5px",
-                }}
-              >
-                Stock *
-              </label>
+              <label style={labelStyle}>Stock *</label>
               <input
                 type="number"
                 value={form.stock}
@@ -330,18 +279,7 @@ const AdminProducts = () => {
               />
             </div>
             <div>
-              <label
-                style={{
-                  display: "block",
-                  fontFamily: "DM Sans",
-                  fontSize: "12px",
-                  fontWeight: "500",
-                  color: "#64748b",
-                  marginBottom: "5px",
-                }}
-              >
-                Product Image
-              </label>
+              <label style={labelStyle}>Product Image</label>
               <input
                 type="file"
                 accept="image/*"
@@ -350,18 +288,7 @@ const AdminProducts = () => {
               />
             </div>
             <div className="ap-col-2">
-              <label
-                style={{
-                  display: "block",
-                  fontFamily: "DM Sans",
-                  fontSize: "12px",
-                  fontWeight: "500",
-                  color: "#64748b",
-                  marginBottom: "5px",
-                }}
-              >
-                Short Description
-              </label>
+              <label style={labelStyle}>Short Description</label>
               <input
                 value={form.shortDescription}
                 onChange={(e) =>
@@ -374,18 +301,7 @@ const AdminProducts = () => {
               />
             </div>
             <div className="ap-col-2">
-              <label
-                style={{
-                  display: "block",
-                  fontFamily: "DM Sans",
-                  fontSize: "12px",
-                  fontWeight: "500",
-                  color: "#64748b",
-                  marginBottom: "5px",
-                }}
-              >
-                Full Description
-              </label>
+              <label style={labelStyle}>Full Description</label>
               <textarea
                 value={form.description}
                 onChange={(e) =>
@@ -416,10 +332,6 @@ const AdminProducts = () => {
               opacity: saving ? 0.7 : 1,
               boxShadow: "0 4px 12px rgba(22,163,74,0.2)",
             }}
-            onMouseEnter={(e) => {
-              if (!saving) e.currentTarget.style.background = "#15803d";
-            }}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "#16a34a")}
           >
             {saving ? "Adding..." : "Add Product"}
           </button>
@@ -474,7 +386,7 @@ const AdminProducts = () => {
         </select>
       </div>
 
-      {/* Products Table */}
+      {/* Table */}
       {loading ? (
         <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           {Array(5)
@@ -483,8 +395,8 @@ const AdminProducts = () => {
               <div
                 key={i}
                 style={{
-                  height: "64px",
-                  borderRadius: "12px",
+                  height: "60px",
+                  borderRadius: "10px",
                   background: "#f0fdf4",
                   animation: "shimmer 1.5s infinite",
                 }}
@@ -547,7 +459,10 @@ const AdminProducts = () => {
                 {filtered.map((p) => (
                   <tr
                     key={p._id}
-                    style={{ borderBottom: "1px solid #f8fafc" }}
+                    style={{
+                      borderBottom: "1px solid #f8fafc",
+                      transition: "background 0.15s",
+                    }}
                     onMouseEnter={(e) =>
                       (e.currentTarget.style.background = "#f8fffe")
                     }
@@ -601,17 +516,16 @@ const AdminProducts = () => {
                     >
                       {p.category?.name || "—"}
                     </td>
-                    <td style={{ padding: "12px 16px" }}>
-                      <span
-                        style={{
-                          fontFamily: "Cormorant Garamond, serif",
-                          fontSize: "16px",
-                          fontWeight: "700",
-                          color: "#16a34a",
-                        }}
-                      >
-                        ₹{p.price?.toLocaleString()}
-                      </span>
+                    <td
+                      style={{
+                        padding: "12px 16px",
+                        fontFamily: "Cormorant Garamond, serif",
+                        fontSize: "16px",
+                        fontWeight: "700",
+                        color: "#16a34a",
+                      }}
+                    >
+                      ₹{p.price?.toLocaleString()}
                     </td>
                     <td style={{ padding: "12px 16px" }}>
                       <span
@@ -658,9 +572,7 @@ const AdminProducts = () => {
                     <td style={{ padding: "12px 16px" }}>
                       <div style={{ display: "flex", gap: "6px" }}>
                         <button
-                          onClick={() =>
-                            handleToggle(p._id, p.isActive !== false)
-                          }
+                          onClick={() => handleToggle(p._id)}
                           style={{
                             padding: "5px 10px",
                             borderRadius: "8px",
@@ -668,19 +580,17 @@ const AdminProducts = () => {
                             fontSize: "11px",
                             fontWeight: "600",
                             cursor: "pointer",
-                            background: "#f8fafc",
-                            border: "1px solid #e2e8f0",
-                            color: "#64748b",
-                            transition: "all 0.2s",
+                            background: "#f0fdf4",
+                            border: "1px solid #bbf7d0",
+                            color: "#15803d",
+                            transition: "background 0.2s",
                           }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.borderColor = "#16a34a";
-                            e.currentTarget.style.color = "#16a34a";
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.borderColor = "#e2e8f0";
-                            e.currentTarget.style.color = "#64748b";
-                          }}
+                          onMouseEnter={(e) =>
+                            (e.currentTarget.style.background = "#dcfce7")
+                          }
+                          onMouseLeave={(e) =>
+                            (e.currentTarget.style.background = "#f0fdf4")
+                          }
                         >
                           {p.isActive !== false ? "Hide" : "Show"}
                         </button>
@@ -697,8 +607,8 @@ const AdminProducts = () => {
                             background: "#fff5f5",
                             border: "1px solid #fca5a5",
                             color: "#dc2626",
-                            transition: "all 0.2s",
                             opacity: deleting === p._id ? 0.6 : 1,
+                            transition: "background 0.2s",
                           }}
                           onMouseEnter={(e) =>
                             (e.currentTarget.style.background = "#fee2e2")
@@ -734,12 +644,8 @@ const AdminProducts = () => {
       )}
 
       <style>{`
-        .ap-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 12px;
-        }
-        @media (min-width: 768px) { .ap-grid { grid-template-columns: repeat(3, 1fr); } }
+        .ap-form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        @media (min-width: 768px) { .ap-form-grid { grid-template-columns: repeat(3, 1fr); } }
         .ap-col-2 { grid-column: 1 / -1; }
       `}</style>
     </div>

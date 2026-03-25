@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAdminStats } from "../../redux/slices/adminSlice";
 import { Link } from "react-router-dom";
 
-const StatCard = ({ icon, label, value, sub, color, bg, border }) => (
+const StatCard = ({ icon, label, value, bg, color, border }) => (
   <div
     style={{
       padding: "20px",
@@ -11,55 +11,31 @@ const StatCard = ({ icon, label, value, sub, color, bg, border }) => (
       background: "#ffffff",
       border: `1px solid ${border || "#e2e8f0"}`,
       transition: "all 0.2s",
+      cursor: "default",
     }}
     onMouseEnter={(e) => {
-      e.currentTarget.style.borderColor = border || "#bbf7d0";
       e.currentTarget.style.transform = "translateY(-2px)";
       e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.06)";
     }}
     onMouseLeave={(e) => {
-      e.currentTarget.style.borderColor = border || "#e2e8f0";
       e.currentTarget.style.transform = "translateY(0)";
       e.currentTarget.style.boxShadow = "none";
     }}
   >
     <div
       style={{
+        width: "44px",
+        height: "44px",
+        borderRadius: "12px",
+        background: bg,
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-between",
+        justifyContent: "center",
+        fontSize: "20px",
         marginBottom: "12px",
       }}
     >
-      <div
-        style={{
-          width: "44px",
-          height: "44px",
-          borderRadius: "12px",
-          background: bg,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          fontSize: "20px",
-        }}
-      >
-        {icon}
-      </div>
-      {sub && (
-        <span
-          style={{
-            fontFamily: "DM Sans",
-            fontSize: "11px",
-            fontWeight: "600",
-            color: "#16a34a",
-            background: "#f0fdf4",
-            padding: "3px 8px",
-            borderRadius: "20px",
-          }}
-        >
-          {sub}
-        </span>
-      )}
+      {icon}
     </div>
     <p
       style={{
@@ -91,35 +67,31 @@ const StatCard = ({ icon, label, value, sub, color, bg, border }) => (
 const AdminDashboard = () => {
   const dispatch = useDispatch();
   const { stats, loading } = useSelector((s) => s.admin);
+  const { user } = useSelector((s) => s.auth);
 
   useEffect(() => {
     dispatch(fetchAdminStats());
   }, []);
 
+  const shimmer = {
+    background: "linear-gradient(90deg,#f0fdf4 25%,#dcfce7 50%,#f0fdf4 75%)",
+    backgroundSize: "200% 100%",
+    animation: "shimmer 1.5s infinite",
+    borderRadius: "16px",
+  };
+
   if (loading)
     return (
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill,minmax(200px,1fr))",
-          gap: "16px",
-        }}
-      >
-        {Array(8)
-          .fill(0)
-          .map((_, i) => (
-            <div
-              key={i}
-              style={{
-                height: "120px",
-                borderRadius: "16px",
-                background:
-                  "linear-gradient(90deg,#f0fdf4 25%,#dcfce7 50%,#f0fdf4 75%)",
-                backgroundSize: "200% 100%",
-                animation: "shimmer 1.5s infinite",
-              }}
-            />
-          ))}
+      <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+        <div style={{ height: "40px", width: "300px", ...shimmer }} />
+        <div className="dash-stats-grid">
+          {Array(8)
+            .fill(0)
+            .map((_, i) => (
+              <div key={i} style={{ height: "120px", ...shimmer }} />
+            ))}
+        </div>
+        <div style={{ height: "200px", ...shimmer }} />
       </div>
     );
 
@@ -130,14 +102,13 @@ const AdminDashboard = () => {
         <h2
           style={{
             fontFamily: "Cormorant Garamond, serif",
-            fontSize: "28px",
+            fontSize: "clamp(22px,3vw,30px)",
             fontWeight: "600",
             color: "#0f172a",
             margin: "0 0 4px 0",
           }}
         >
-          Welcome back, {useSelector((s) => s.auth.user?.name?.split(" ")[0])}{" "}
-          🌙
+          Welcome back, {user?.name?.split(" ")[0]} 🌙
         </h2>
         <p
           style={{
@@ -152,15 +123,14 @@ const AdminDashboard = () => {
       </div>
 
       {/* Stats Grid */}
-      <div className="stats-grid">
+      <div className="dash-stats-grid">
         <StatCard
           icon="💰"
           label="Total Revenue"
-          value={`₹${stats?.totalRevenue?.toLocaleString() || 0}`}
+          value={`₹${(stats?.totalRevenue || 0).toLocaleString()}`}
           color="#16a34a"
           bg="#f0fdf4"
           border="#bbf7d0"
-          sub="All time"
         />
         <StatCard
           icon="🛒"
@@ -211,12 +181,12 @@ const AdminDashboard = () => {
           border="#fca5a5"
         />
         <StatCard
-          icon="🌟"
-          label="Avg Rating"
-          value={stats?.avgRating?.toFixed(1) || "—"}
-          color="#c9a84c"
-          bg="#fefce8"
-          border="#fde68a"
+          icon="🗂️"
+          label="Categories"
+          value={stats?.totalCategories || 0}
+          color="#db2777"
+          bg="#fdf2f8"
+          border="#fbcfe8"
         />
       </div>
 
@@ -232,7 +202,7 @@ const AdminDashboard = () => {
         <p
           style={{
             fontFamily: "DM Sans",
-            fontSize: "13px",
+            fontSize: "12px",
             fontWeight: "700",
             textTransform: "uppercase",
             letterSpacing: "0.1em",
@@ -242,33 +212,26 @@ const AdminDashboard = () => {
         >
           Quick Actions
         </p>
-        <div className="actions-grid">
+        <div className="dash-actions-grid">
           {[
             {
-              icon: "➕",
-              label: "Add Product",
+              icon: "📦",
+              label: "Products",
               to: "/admin/products",
-              color: "#16a34a",
-              bg: "#f0fdf4",
+              color: "#7c3aed",
+              bg: "#faf5ff",
             },
             {
-              icon: "📋",
-              label: "View Orders",
+              icon: "🛒",
+              label: "Orders",
               to: "/admin/orders",
               color: "#0284c7",
               bg: "#f0f9ff",
             },
             {
               icon: "👥",
-              label: "Manage Users",
+              label: "Users",
               to: "/admin/users",
-              color: "#7c3aed",
-              bg: "#faf5ff",
-            },
-            {
-              icon: "🎟️",
-              label: "Add Coupon",
-              to: "/admin/coupons",
               color: "#c9a84c",
               bg: "#fefce8",
             },
@@ -280,11 +243,18 @@ const AdminDashboard = () => {
               bg: "#fdf2f8",
             },
             {
+              icon: "🎟️",
+              label: "Coupons",
+              to: "/admin/coupons",
+              color: "#d97706",
+              bg: "#fffbeb",
+            },
+            {
               icon: "⭐",
               label: "Reviews",
               to: "/admin/reviews",
-              color: "#d97706",
-              bg: "#fffbeb",
+              color: "#16a34a",
+              bg: "#f0fdf4",
             },
           ].map((a) => (
             <Link
@@ -362,6 +332,7 @@ const AdminDashboard = () => {
               fontSize: "13px",
               color: "#16a34a",
               textDecoration: "none",
+              fontWeight: "600",
             }}
           >
             View all →
@@ -374,6 +345,7 @@ const AdminDashboard = () => {
                 width: "100%",
                 borderCollapse: "collapse",
                 fontFamily: "DM Sans",
+                minWidth: "500px",
               }}
             >
               <thead>
@@ -390,7 +362,6 @@ const AdminDashboard = () => {
                           textTransform: "uppercase",
                           letterSpacing: "0.08em",
                           color: "#94a3b8",
-                          whiteSpace: "nowrap",
                         }}
                       >
                         {h}
@@ -404,12 +375,18 @@ const AdminDashboard = () => {
                   <tr
                     key={order._id}
                     style={{ borderBottom: "1px solid #f8fafc" }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.background = "#f8fffe")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.background = "transparent")
+                    }
                   >
                     <td
                       style={{
                         padding: "10px 12px",
                         fontSize: "13px",
-                        fontWeight: "600",
+                        fontWeight: "700",
                         color: "#0f172a",
                       }}
                     >
@@ -427,7 +404,7 @@ const AdminDashboard = () => {
                     <td
                       style={{
                         padding: "10px 12px",
-                        fontSize: "14px",
+                        fontSize: "15px",
                         fontWeight: "700",
                         color: "#16a34a",
                         fontFamily: "Cormorant Garamond, serif",
@@ -494,21 +471,96 @@ const AdminDashboard = () => {
         )}
       </div>
 
+      {/* Low Stock Warning */}
+      {stats?.lowStockProducts?.length > 0 && (
+        <div
+          style={{
+            padding: "20px",
+            borderRadius: "16px",
+            background: "#fffbeb",
+            border: "1px solid #fde68a",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "DM Sans",
+              fontSize: "13px",
+              fontWeight: "700",
+              color: "#d97706",
+              margin: "0 0 12px 0",
+            }}
+          >
+            ⚠️ Low Stock Alert ({stats.lowStockProducts.length} products)
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+            {stats.lowStockProducts.map((p) => (
+              <div
+                key={p._id}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  padding: "8px 12px",
+                  borderRadius: "8px",
+                  background: "#ffffff",
+                  border: "1px solid #fde68a",
+                }}
+              >
+                <div
+                  style={{ display: "flex", alignItems: "center", gap: "10px" }}
+                >
+                  <img
+                    src={p.images?.[0]?.url}
+                    alt={p.name}
+                    style={{
+                      width: "32px",
+                      height: "32px",
+                      borderRadius: "6px",
+                      objectFit: "cover",
+                    }}
+                  />
+                  <span
+                    style={{
+                      fontFamily: "DM Sans",
+                      fontSize: "13px",
+                      fontWeight: "600",
+                      color: "#0f172a",
+                    }}
+                  >
+                    {p.name}
+                  </span>
+                </div>
+                <span
+                  style={{
+                    fontFamily: "DM Sans",
+                    fontSize: "12px",
+                    fontWeight: "700",
+                    color: "#dc2626",
+                  }}
+                >
+                  {p.stock} left
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       <style>{`
-        .stats-grid {
+        .dash-stats-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           gap: 12px;
         }
-        @media (min-width: 640px)  { .stats-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
-        @media (min-width: 1280px) { .stats-grid { grid-template-columns: repeat(8, 1fr); } }
+        @media (min-width: 640px)  { .dash-stats-grid { grid-template-columns: repeat(4, 1fr); gap: 14px; } }
+        @media (min-width: 1280px) { .dash-stats-grid { grid-template-columns: repeat(8, 1fr); } }
 
-        .actions-grid {
+        .dash-actions-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 10px;
         }
-        @media (min-width: 640px) { .actions-grid { grid-template-columns: repeat(6, 1fr); } }
+        @media (min-width: 640px) { .dash-actions-grid { grid-template-columns: repeat(6, 1fr); } }
       `}</style>
     </div>
   );

@@ -541,6 +541,22 @@ const CartPage = () => {
     toast.success("Cart cleared");
   };
 
+  // const handleApplyCoupon = async () => {
+  //   if (!coupon.trim()) return;
+  //   setApplying(true);
+  //   try {
+  //     const { data } = await API.post("/coupons/validate", {
+  //       code: coupon.trim(),
+  //       orderAmount: totalPrice,
+  //     });
+  //     setCouponData(data.data);
+  //     toast.success(data.message);
+  //   } catch (err) {
+  //     toast.error(err.response?.data?.message || "Invalid coupon");
+  //   } finally {
+  //     setApplying(false);
+  //   }
+  // };
   const handleApplyCoupon = async () => {
     if (!coupon.trim()) return;
     setApplying(true);

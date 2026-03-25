@@ -34,38 +34,28 @@ const AdminUsers = () => {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-          gap: "12px",
-        }}
-      >
-        <div>
-          <h2
-            style={{
-              fontFamily: "Cormorant Garamond, serif",
-              fontSize: "24px",
-              fontWeight: "600",
-              color: "#0f172a",
-              margin: 0,
-            }}
-          >
-            Users
-          </h2>
-          <p
-            style={{
-              fontFamily: "DM Sans",
-              fontSize: "13px",
-              color: "#64748b",
-              margin: "2px 0 0 0",
-            }}
-          >
-            {users.length} registered users
-          </p>
-        </div>
+      <div>
+        <h2
+          style={{
+            fontFamily: "Cormorant Garamond, serif",
+            fontSize: "26px",
+            fontWeight: "600",
+            color: "#0f172a",
+            margin: 0,
+          }}
+        >
+          Users
+        </h2>
+        <p
+          style={{
+            fontFamily: "DM Sans",
+            fontSize: "13px",
+            color: "#64748b",
+            margin: "2px 0 0 0",
+          }}
+        >
+          {users.length} registered users
+        </p>
       </div>
 
       <input
@@ -96,8 +86,8 @@ const AdminUsers = () => {
               <div
                 key={i}
                 style={{
-                  height: "60px",
-                  borderRadius: "12px",
+                  height: "56px",
+                  borderRadius: "10px",
                   background: "#f0fdf4",
                   animation: "shimmer 1.5s infinite",
                 }}
@@ -159,7 +149,10 @@ const AdminUsers = () => {
                 {filtered.map((user) => (
                   <tr
                     key={user._id}
-                    style={{ borderBottom: "1px solid #f8fafc" }}
+                    style={{
+                      borderBottom: "1px solid #f8fafc",
+                      transition: "background 0.15s",
+                    }}
                     onMouseEnter={(e) =>
                       (e.currentTarget.style.background = "#f8fffe")
                     }
@@ -279,7 +272,7 @@ const AdminUsers = () => {
                           toggling === user._id || user.role === "admin"
                         }
                         style={{
-                          padding: "5px 12px",
+                          padding: "5px 14px",
                           borderRadius: "8px",
                           fontFamily: "DM Sans",
                           fontSize: "12px",

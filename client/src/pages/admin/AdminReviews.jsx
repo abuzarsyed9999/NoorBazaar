@@ -15,7 +15,7 @@ const AdminReviews = () => {
   const fetchReviews = async () => {
     setLoading(true);
     try {
-      const { data } = await API.get("/reviews/admin/all");
+      const { data } = await API.get("/admin/reviews");
       setReviews(data.data || []);
     } catch {
       toast.error("Failed to load reviews");
@@ -28,7 +28,7 @@ const AdminReviews = () => {
     if (!window.confirm("Delete this review?")) return;
     setDeleting(reviewId);
     try {
-      await API.delete(`/reviews/${reviewId}`);
+      await API.delete(`/admin/reviews/${reviewId}`);
       toast.success("Review deleted");
       setReviews((p) => p.filter((r) => r._id !== reviewId));
     } catch {
@@ -43,7 +43,7 @@ const AdminReviews = () => {
       {[1, 2, 3, 4, 5].map((s) => (
         <span
           key={s}
-          style={{ fontSize: "12px", color: s <= n ? "#c9a84c" : "#e2e8f0" }}
+          style={{ fontSize: "13px", color: s <= n ? "#c9a84c" : "#e2e8f0" }}
         >
           ★
         </span>
@@ -71,7 +71,7 @@ const AdminReviews = () => {
           <h2
             style={{
               fontFamily: "Cormorant Garamond, serif",
-              fontSize: "24px",
+              fontSize: "26px",
               fontWeight: "600",
               color: "#0f172a",
               margin: 0,
@@ -110,7 +110,7 @@ const AdminReviews = () => {
           <option value="all">All Ratings</option>
           {[5, 4, 3, 2, 1].map((n) => (
             <option key={n} value={n}>
-              {n} Star{n !== 1 ? "s" : ""}
+              {n} Stars
             </option>
           ))}
         </select>
@@ -190,7 +190,6 @@ const AdminReviews = () => {
                     minWidth: 0,
                   }}
                 >
-                  {/* User Avatar */}
                   <div
                     style={{
                       width: "36px",
@@ -271,7 +270,7 @@ const AdminReviews = () => {
                       style={{
                         display: "flex",
                         alignItems: "center",
-                        gap: "8px",
+                        gap: "12px",
                         flexWrap: "wrap",
                       }}
                     >
@@ -305,7 +304,6 @@ const AdminReviews = () => {
                     </div>
                   </div>
                 </div>
-
                 <button
                   onClick={() => handleDelete(r._id)}
                   disabled={deleting === r._id}

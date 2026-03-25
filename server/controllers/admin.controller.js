@@ -13,9 +13,7 @@ const logger = require("../utils/logger");
 // ==============================
 exports.getDashboardStats = async (req, res, next) => {
   try {
-    // ==============================
-    // Counts
-    // ==============================
+    // ── Counts ──
     const [
       totalUsers,
       totalProducts,
@@ -27,12 +25,10 @@ exports.getDashboardStats = async (req, res, next) => {
       Product.countDocuments({ isActive: true }),
       Order.countDocuments(),
       Category.countDocuments({ isActive: true }),
-      Review.countDocuments({ isActive: true }),
+      Review.countDocuments(),
     ]);
 
-    // ==============================
-    // Revenue Stats
-    // ==============================
+    // ── Revenue ──
     const revenueStats = await Order.aggregate([
       { $match: { paymentStatus: "Paid" } },
       {
@@ -45,57 +41,62 @@ exports.getDashboardStats = async (req, res, next) => {
       },
     ]);
 
-    // ==============================
-    // Order Status Breakdown
-    // ==============================
+    // ── Order Status Breakdown ──
     const orderStatusBreakdown = await Order.aggregate([
-      {
-        $group: {
-          _id: "$orderStatus",
-          count: { $sum: 1 },
-        },
-      },
+      { $group: { _id: "$orderStatus", count: { $sum: 1 } } },
     ]);
 
-    // ==============================
-    // Recent Orders
-    // ==============================
+    // ── Recent Orders ──
     const recentOrders = await Order.find()
       .populate("user", "name email")
       .sort({ createdAt: -1 })
-      .limit(5);
+      .limit(5)
+      .lean();
 
-    // ==============================
-    // Recent Users
-    // ==============================
+    // ── Recent Users ──
     const recentUsers = await User.find({ role: "user" })
       .sort({ createdAt: -1 })
       .limit(5)
-      .select("name email createdAt avatar");
+      .select("name email createdAt")
+      .lean();
 
-    // ==============================
-    // Top Selling Products
-    // ==============================
+    // ── Top Products ──
     const topProducts = await Product.find({ isActive: true })
       .sort({ sold: -1 })
       .limit(5)
-      .select("name price images sold ratings");
+      .select("name price images sold ratings")
+      .lean();
 
-    // ==============================
-    // Monthly Sales Current Year
-    // ==============================
-    const currentYear = new Date().getFullYear();
-    const monthlySales = await Order.getMonthlySales(currentYear);
-
-    // ==============================
-    // Low Stock Products
-    // ==============================
+    // ── Low Stock Products ──
     const lowStockProducts = await Product.find({
       isActive: true,
-      $expr: { $lte: ["$stock", "$lowStockThreshold"] },
+      stock: { $lte: 10 },
     })
-      .select("name stock lowStockThreshold images")
-      .limit(10);
+      .select("name stock images")
+      .limit(10)
+      .lean();
+
+    // ── Monthly Sales ──
+    const currentYear = new Date().getFullYear();
+    const monthlySales = await Order.aggregate([
+      {
+        $match: {
+          paymentStatus: "Paid",
+          createdAt: {
+            $gte: new Date(`${currentYear}-01-01`),
+            $lte: new Date(`${currentYear}-12-31`),
+          },
+        },
+      },
+      {
+        $group: {
+          _id: { $month: "$createdAt" },
+          revenue: { $sum: "$totalPrice" },
+          orders: { $sum: 1 },
+        },
+      },
+      { $sort: { _id: 1 } },
+    ]);
 
     res.status(200).json({
       success: true,
@@ -117,8 +118,8 @@ exports.getDashboardStats = async (req, res, next) => {
         recentOrders,
         recentUsers,
         topProducts,
-        monthlySales,
         lowStockProducts,
+        monthlySales,
       },
     });
   } catch (error) {
@@ -134,7 +135,7 @@ exports.getDashboardStats = async (req, res, next) => {
 exports.getAllUsers = async (req, res, next) => {
   try {
     const page = Number(req.query.page) || 1;
-    const limit = Number(req.query.limit) || 20;
+    const limit = Number(req.query.limit) || 50;
     const skip = (page - 1) * limit;
     const search = req.query.search;
 
@@ -152,11 +153,11 @@ exports.getAllUsers = async (req, res, next) => {
       .sort({ createdAt: -1 })
       .skip(skip)
       .limit(limit)
-      .select("-password -resetPasswordToken -resetPasswordExpire");
+      .select("-password -resetPasswordToken -resetPasswordExpire")
+      .lean();
 
     res.status(200).json({
       success: true,
-      message: "Users fetched successfully",
       count: users.length,
       total,
       pagination: {
@@ -182,29 +183,28 @@ exports.getSingleUser = async (req, res, next) => {
       "-password -resetPasswordToken -resetPasswordExpire",
     );
 
-    if (!user) {
-      return next(new ErrorHandler("User not found", 404));
-    }
+    if (!user) return next(new ErrorHandler("User not found", 404));
 
-    // Get user orders
-    const orders = await Order.find({ user: req.params.id })
-      .sort({ createdAt: -1 })
-      .limit(5);
-
-    // Get user reviews
-    const reviews = await Review.find({ user: req.params.id })
-      .populate("product", "name images")
-      .sort({ createdAt: -1 })
-      .limit(5);
+    const [orders, reviews, totalOrders] = await Promise.all([
+      Order.find({ user: req.params.id })
+        .sort({ createdAt: -1 })
+        .limit(5)
+        .lean(),
+      Review.find({ user: req.params.id })
+        .populate("product", "name images")
+        .sort({ createdAt: -1 })
+        .limit(5)
+        .lean(),
+      Order.countDocuments({ user: req.params.id }),
+    ]);
 
     res.status(200).json({
       success: true,
-      message: "User fetched successfully",
       data: {
         user,
         recentOrders: orders,
         recentReviews: reviews,
-        totalOrders: await Order.countDocuments({ user: req.params.id }),
+        totalOrders,
       },
     });
   } catch (error) {
@@ -221,11 +221,10 @@ exports.updateUserRole = async (req, res, next) => {
   try {
     const { role } = req.body;
 
-    if (!role || !["user", "admin"].includes(role)) {
-      return next(new ErrorHandler("Role must be user or admin", 400));
+    if (!["user", "admin"].includes(role)) {
+      return next(new ErrorHandler("Role must be 'user' or 'admin'", 400));
     }
 
-    // Prevent admin from changing own role
     if (req.params.id === req.user._id.toString()) {
       return next(new ErrorHandler("You cannot change your own role", 400));
     }
@@ -236,17 +235,13 @@ exports.updateUserRole = async (req, res, next) => {
       { new: true },
     ).select("-password");
 
-    if (!user) {
-      return next(new ErrorHandler("User not found", 404));
-    }
+    if (!user) return next(new ErrorHandler("User not found", 404));
 
-    logger.info(
-      `✅ User role updated: ${user.email} → ${role} by ${req.user.email}`,
-    );
+    logger.info(`✅ Role updated: ${user.email} → ${role}`);
 
     res.status(200).json({
       success: true,
-      message: `User role updated to ${role} successfully`,
+      message: `Role updated to ${role}`,
       data: user,
     });
   } catch (error) {
@@ -261,51 +256,43 @@ exports.updateUserRole = async (req, res, next) => {
 // ==============================
 exports.deleteUser = async (req, res, next) => {
   try {
-    const user = await User.findById(req.params.id);
-
-    if (!user) {
-      return next(new ErrorHandler("User not found", 404));
-    }
-
-    // Prevent deleting own account
     if (req.params.id === req.user._id.toString()) {
       return next(new ErrorHandler("You cannot delete your own account", 400));
     }
 
+    const user = await User.findById(req.params.id);
+    if (!user) return next(new ErrorHandler("User not found", 404));
+
     await user.deleteOne();
 
-    logger.info(`🗑️ User deleted: ${user.email} by ${req.user.email}`);
+    logger.info(`🗑️ User deleted: ${user.email}`);
 
-    res.status(200).json({
-      success: true,
-      message: "User deleted successfully",
-    });
+    res
+      .status(200)
+      .json({ success: true, message: "User deleted successfully" });
   } catch (error) {
     next(error);
   }
 };
 
 // ==============================
-// @desc    Toggle User Status
+// @desc    Toggle User Active Status
 // @route   PATCH /api/v1/admin/users/:id/toggle
 // @access  Admin
 // ==============================
 exports.toggleUserStatus = async (req, res, next) => {
   try {
-    const user = await User.findById(req.params.id);
-
-    if (!user) {
-      return next(new ErrorHandler("User not found", 404));
-    }
-
     if (req.params.id === req.user._id.toString()) {
       return next(
         new ErrorHandler("You cannot deactivate your own account", 400),
       );
     }
 
+    const user = await User.findById(req.params.id);
+    if (!user) return next(new ErrorHandler("User not found", 404));
+
     user.isActive = !user.isActive;
-    await user.save();
+    await user.save({ validateBeforeSave: false });
 
     logger.info(
       `✅ User ${user.isActive ? "activated" : "deactivated"}: ${user.email}`,
@@ -313,8 +300,14 @@ exports.toggleUserStatus = async (req, res, next) => {
 
     res.status(200).json({
       success: true,
-      message: `User ${user.isActive ? "activated" : "deactivated"} successfully`,
-      data: { isActive: user.isActive },
+      message: `User ${user.isActive ? "activated" : "deactivated"}`,
+      data: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+        isActive: user.isActive,
+      },
     });
   } catch (error) {
     next(error);
@@ -329,9 +322,28 @@ exports.toggleUserStatus = async (req, res, next) => {
 exports.getSalesReport = async (req, res, next) => {
   try {
     const year = Number(req.query.year) || new Date().getFullYear();
-    const monthlySales = await Order.getMonthlySales(year);
 
-    // Top categories by sales
+    const monthlySales = await Order.aggregate([
+      {
+        $match: {
+          paymentStatus: "Paid",
+          createdAt: {
+            $gte: new Date(`${year}-01-01`),
+            $lte: new Date(`${year}-12-31`),
+          },
+        },
+      },
+      {
+        $group: {
+          _id: { $month: "$createdAt" },
+          revenue: { $sum: "$totalPrice" },
+          orders: { $sum: 1 },
+        },
+      },
+      { $sort: { _id: 1 } },
+    ]);
+
+    // ── Top categories ──
     const topCategories = await Order.aggregate([
       { $match: { paymentStatus: "Paid" } },
       { $unwind: "$items" },
@@ -364,7 +376,7 @@ exports.getSalesReport = async (req, res, next) => {
       { $limit: 5 },
     ]);
 
-    // Payment method breakdown
+    // ── Payment breakdown ──
     const paymentBreakdown = await Order.aggregate([
       { $match: { paymentStatus: "Paid" } },
       {
@@ -378,7 +390,6 @@ exports.getSalesReport = async (req, res, next) => {
 
     res.status(200).json({
       success: true,
-      message: "Sales report fetched successfully",
       data: {
         year,
         monthlySales,

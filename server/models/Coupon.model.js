@@ -1,4 +1,4 @@
-const mongoose         = require("mongoose");
+const mongoose = require("mongoose");
 const mongoosePaginate = require("mongoose-paginate-v2");
 
 const couponSchema = new mongoose.Schema(
@@ -8,9 +8,12 @@ const couponSchema = new mongoose.Schema(
       required: [true, "Please enter coupon code"],
       trim: true,
       uppercase: true,
-      minlength: [3,  "Coupon code must be at least 3 characters"],
+      minlength: [3, "Coupon code must be at least 3 characters"],
       maxlength: [20, "Coupon code cannot exceed 20 characters"],
-      match: [/^[A-Z0-9]+$/, "Coupon code can only contain letters and numbers"],
+      match: [
+        /^[A-Z0-9]+$/,
+        "Coupon code can only contain letters and numbers",
+      ],
     },
 
     description: {
@@ -64,8 +67,8 @@ const couponSchema = new mongoose.Schema(
 
     usedBy: [
       {
-        user:      { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-        usedAt:    { type: Date, default: Date.now },
+        user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+        usedAt: { type: Date, default: Date.now },
         usedCount: { type: Number, default: 1 },
       },
     ],
@@ -99,15 +102,15 @@ const couponSchema = new mongoose.Schema(
   {
     timestamps: true,
     versionKey: false,
-    toJSON:     { virtuals: true },
-    toObject:   { virtuals: true },
-  }
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
+  },
 );
 
 // ==============================
 // Indexes
 // ==============================
-couponSchema.index({ code: 1 },      { unique: true });
+couponSchema.index({ code: 1 }, { unique: true });
 couponSchema.index({ isActive: 1, expiryDate: 1 });
 couponSchema.index({ expiryDate: 1 });
 
@@ -131,8 +134,7 @@ couponSchema.virtual("remainingUsage").get(function () {
 // Instance Methods
 // ==============================
 couponSchema.methods.isValid = function (orderAmount, userId) {
-  if (!this.isActive)
-    return { valid: false, message: "Coupon is inactive" };
+  if (!this.isActive) return { valid: false, message: "Coupon is inactive" };
   if (new Date() < this.startDate)
     return { valid: false, message: "Coupon is not active yet" };
   if (new Date() > this.expiryDate)
@@ -146,7 +148,7 @@ couponSchema.methods.isValid = function (orderAmount, userId) {
     };
   if (userId) {
     const userUsage = this.usedBy.find(
-      (u) => u.user.toString() === userId.toString()
+      (u) => u.user.toString() === userId.toString(),
     );
     if (userUsage && userUsage.usedCount >= this.maxUsagePerUser) {
       return { valid: false, message: "You have already used this coupon" };
@@ -173,7 +175,7 @@ couponSchema.methods.calculateDiscount = function (orderAmount) {
 // ==============================
 couponSchema.statics.findByCode = function (code) {
   return this.findOne({
-    code:     code.toUpperCase().trim(),
+    code: code.toUpperCase().trim(),
     isActive: true,
   });
 };

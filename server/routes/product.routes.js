@@ -13,6 +13,7 @@ const {
   deleteProduct,
   toggleProductStatus,
   getAdminProducts,
+  getSearchSuggestions,
 } = require("../controllers/product.controller");
 
 const { isAuthenticated } = require("../middleware/auth.middleware");
@@ -23,6 +24,7 @@ const {
   validateUpdateProduct,
 } = require("../validators/product.validator");
 
+router.get("/search/suggestions", getSearchSuggestions);
 // ==============================
 // Public Routes
 // ==============================
