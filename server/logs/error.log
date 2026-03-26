@@ -228,3 +228,5 @@ Use mongoose.model(name, schema) - /api/v1/auth/me - GET - ::1
 2026-03-24 22:02:46 [error]: Welcome email failed: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
 535 5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-c74443cc2a8sm10707111a12.27 - gsmtp
 2026-03-24 23:03:28 [error]: 500 - Cast to Number failed for value "{ average: 5, count: 1 }" (type Object) at path "ratings" - /api/v1/reviews - POST - ::1
+2026-03-25 21:33:38 [error]: 400 - Product already in wishlist - /api/v1/users/wishlist/69b67ea7510a6233bba9c630 - POST - ::1
+2026-03-25 21:33:39 [error]: 400 - Product already in wishlist - /api/v1/users/wishlist/69b67ea7510a6233bba9c630 - POST - ::1

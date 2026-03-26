@@ -884,3 +884,34 @@ Use mongoose.model(name, schema) - /api/v1/auth/me - GET - ::1
 2026-03-24 23:22:05 [info]: ✅ User logged out: abuzarcda@gmail.com
 2026-03-24 23:23:14 [info]: ✅ User logged in: abuzar@gmail.com
 2026-03-24 23:24:12 [info]: ✅ User logged out: abuzar@gmail.com
+2026-03-25 17:46:05 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-25 17:46:05 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-25 17:46:05 [info]: 🔗 http://localhost:5000
+2026-03-25 17:52:24 [info]: ✅ User logged in: abuzar@gmail.com
+2026-03-25 19:28:35 [info]: 🔄 MongoDB Reconnected
+2026-03-25 19:28:35 [info]: 🔄 MongoDB Reconnected
+2026-03-25 19:29:00 [warn]: ⚠️  MongoDB Disconnected
+2026-03-25 19:29:04 [info]: 🔄 MongoDB Reconnected
+2026-03-25 19:37:25 [info]: 🔄 MongoDB Reconnected
+2026-03-25 21:26:06 [info]: 🔄 MongoDB Reconnected
+2026-03-25 21:26:16 [warn]: ⚠️  MongoDB Disconnected
+2026-03-25 21:26:17 [info]: 🔄 MongoDB Reconnected
+2026-03-25 21:26:48 [info]: 🛒 Item added to cart: dates by abuzar@gmail.com
+2026-03-25 21:33:38 [error]: 400 - Product already in wishlist - /api/v1/users/wishlist/69b67ea7510a6233bba9c630 - POST - ::1
+2026-03-25 21:33:39 [error]: 400 - Product already in wishlist - /api/v1/users/wishlist/69b67ea7510a6233bba9c630 - POST - ::1
+2026-03-25 21:40:20 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-00.yaeay1t.mongodb.net
+2026-03-25 21:40:20 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-25 21:40:20 [info]: 🔗 http://localhost:5000
+2026-03-25 21:43:31 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-02.yaeay1t.mongodb.net
+2026-03-25 21:43:31 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-25 21:43:31 [info]: 🔗 http://localhost:5000
+2026-03-25 21:44:58 [info]: ✅ User logged out: abuzar@gmail.com
+2026-03-25 21:48:34 [info]: ✅ MongoDB Connected: ac-enjagy0-shard-00-01.yaeay1t.mongodb.net
+2026-03-25 21:48:34 [info]: 🌙 NoorBazaar Server running in development mode
+2026-03-25 21:48:34 [info]: 🔗 http://localhost:5000
+2026-03-25 22:09:51 [info]: 🔄 MongoDB Reconnected
+2026-03-25 22:36:49 [info]: 🔄 MongoDB Reconnected
+2026-03-26 02:08:54 [info]: 🔄 MongoDB Reconnected
+2026-03-26 02:08:54 [info]: 🔄 MongoDB Reconnected
+2026-03-26 19:08:57 [warn]: ⚠️  MongoDB Disconnected
+2026-03-26 19:08:58 [info]: 🔄 MongoDB Reconnected
